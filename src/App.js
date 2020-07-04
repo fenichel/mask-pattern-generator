@@ -2,16 +2,16 @@ import React from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import Button from 'react-bootstrap/Button';
+import Container from 'react-bootstrap/Container';
 import MyForm from './Form.js';
 
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
+      <Container>
         <MyForm></MyForm>
-      </header>
+      </Container>
     </div>
   );
 }
