@@ -9,7 +9,7 @@ export class Ruler extends React.Component {
             x2='10' y2='-25' 
             stroke='black'
             fill='none'
-            stroke-width='.5px'></line> 
+            strokeWidth='.5px'></line> 
             <text x='0' y='-20' 
             fontSize='4px'
             fontFamily='sans-serif'

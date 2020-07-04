@@ -21,7 +21,9 @@ class MyForm extends React.Component {
             noseLength: 15,
             chinLength: 15, 
             earToThroat: 90,
-            bridgeToTip: 30
+            bridgeToTip: 30,
+            earToBridge: 110,
+            chinToThroat: 55
             // ear top to nostril: 95
             // nostril to bridge: 35
             // philtrum to nose tip: 22
@@ -109,6 +111,18 @@ class MyForm extends React.Component {
                                     label="Nose bridge to tip"
                                     val={this.state.bridgeToTip}
                                     onValueChange={this.handleInputChange}>
+                                </DimensionInput>   
+                                                             <DimensionInput
+                                    id="earToBridge"
+                                    label="Ear top to nose bridge"
+                                    val={this.state.earToBridge}
+                                    onValueChange={this.handleInputChange}>
+                                </DimensionInput>
+                                                               <DimensionInput
+                                    id="chinToThroat"
+                                    label="Chin to throat"
+                                    val={this.state.chinToThroat}
+                                    onValueChange={this.handleInputChange}>
                                 </DimensionInput>
                             </Col>
                             <Col>
@@ -145,6 +159,8 @@ class MyForm extends React.Component {
                         chinLength={this.state.chinLength}
                         earToThroat={this.state.earToThroat}
                         bridgeToTip={this.state.bridgeToTip}
+                        earToBridge={this.state.earToBridge}
+                        chinToThroat={this.state.chinToThroat}
                         >
                     </MaskPattern>
                 </Row>

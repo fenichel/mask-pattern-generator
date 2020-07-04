@@ -4,7 +4,7 @@ import Button from 'react-bootstrap/Button';
 import { Ruler } from './ruler';
 import { VertexLabels } from './VertexLabels';
 import { patternToSvg, cloneSvg } from './exportSvg';
-
+import { degreeToRadian, getX, getY, getAngleA, radianToDegree } from './trig';
 
 
 export class MaskPattern extends React.Component {
@@ -60,6 +60,7 @@ export class MaskPattern extends React.Component {
     }
 
     setNostrilPoint(props) {
+        // unused
         this.nostrilPoint = {
             x: props.earToNose - props.nostrilWidth / 2 - this.nostrilPointOffsetX,
             y: -this.earToNoseRise,
@@ -68,38 +69,64 @@ export class MaskPattern extends React.Component {
     }
 
     setBridgePoint(props) {
-        const angle = this.noseBridgeHeight * 2 * Math.PI / 180;
-        const x = this.noseBridgeHeight * Math.cos(angle);
-        const y = this.noseBridgeHeight * Math.sin(angle);
+        const innerAngle = getAngleA(props.bridgeToTip, props.earToBridge, props.earToNose);
+        const totalAngle = innerAngle + degreeToRadian(5);
+        const x = getX(totalAngle, props.earToBridge);
+        const y = -getY(totalAngle, props.earToBridge);
         this.bridgePoint = {
-            x: props.earToNose - x,//this.nostrilPoint.x + x,
-            y: this.nostrilPoint.y - y,
+            x: x,
+            y: y,
             label: "Bridge of nose"
         }
     }
 
     setNoseTipPoint(props) {
-        let x = props.earToNose// this.bridgePoint.x + props.noseLength * 1.4;
-        let y = this.bridgePoint.y + props.noseLength * 1.4;
+        let x = getX(degreeToRadian(5), props.earToNose);
+        let y = -getY(degreeToRadian(5), props.earToNose);
         this.nosePoint = {
-            x: x,//props.earToNose,//this.earTopToNostril + this.noseLength,
-            y: y - this.earToNoseRise * 1.5,
+            x: x,
+            y: y,
             label: "Tip of nose"
         }
     }
 
     setChinPoint(props) {
         this.chinPoint = {
-            x: props.earToChin,
+            x: this.nosePoint.x,
             y: this.nosePoint.y + props.noseToChin,
             label: "Point of chin"
         }
     }
 
     setThroatPoint(props) {
+        const earBottomToChinX = this.chinPoint.x - this.earBottom.x;
+        const earBottomToChinY = this.chinPoint.y - this.earBottom.y;
+        const earBottomToChinDistance = 
+                Math.sqrt(
+                    earBottomToChinX * earBottomToChinX + 
+                    earBottomToChinY * earBottomToChinY);
+
+        console.log('distance: ' + earBottomToChinDistance);
+    
+        const lowerAngle = getAngleA(
+            props.chinToThroat, 
+            earBottomToChinDistance, 
+            props.earToThroat);
+console.log(lowerAngle);
+
+        const upperAngle = getAngleA(
+            earBottomToChinY,
+            earBottomToChinX,
+            earBottomToChinDistance);
+
+        const totalAngle = upperAngle + lowerAngle;
+
+        const x = this.earBottom.x + getX(totalAngle, props.earToThroat);
+        const y = this.earBottom.y + getY(totalAngle, props.earToThroat);
+        console.log(y);
         this.throatPoint = {
-            x: props.earToThroat,//this.earBottomToThroat,
-            y: this.chinPoint.y + this.chinToThroat,
+            x: x,//props.earToThroat,//this.earBottomToThroat,
+            y: y, //this.chinPoint.y + this.chinToThroat,
             label: "Throat"
         }
     }
@@ -137,7 +164,7 @@ export class MaskPattern extends React.Component {
         this.setDimensions(props);
         let points = [
             this.earTop,
-            this.nostrilPoint,
+            //this.nostrilPoint,
             this.bridgePoint,
             this.nosePoint,
             this.chinPoint,
@@ -183,13 +210,13 @@ export class MaskPattern extends React.Component {
                             points={polylinePoints}
                             stroke='black'
                             fill='none'
-                            stroke-width='.5px'
+                            strokeWidth='.5px'
                         ></polyline>
                                                 <polyline
                         points={tabPolylinePoints}
                         stroke='black'
                         fill='none'
-                        stroke-width='.5px'
+                        strokeWidth='.5px'
                     ></polyline>
                         {this.showLabels &&
                             <VertexLabels points={points}></VertexLabels>}
