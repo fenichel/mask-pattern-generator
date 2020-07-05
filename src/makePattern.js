@@ -16,7 +16,7 @@ export class MaskPattern extends React.Component {
         this.setDimensions(props);
 
         this.earToNoseRiseAngle = degreeToRadian(5);
-        this.tabWidth = 12;
+        this.tabWidth = 25;
         this.showLabels = true;
 
         // The mask doesn't actually go all the way to the edge of the nostril before 
@@ -175,7 +175,7 @@ export class MaskPattern extends React.Component {
                         <svg
                             width='300mm'
                             height='300mm'
-                            viewBox='-20 -75 280 225'
+                            viewBox='-50 -75 250 225'
                             id='maskPattern'>
                             <Ruler></Ruler>
                             <g transform='translate(0, 0)'>
