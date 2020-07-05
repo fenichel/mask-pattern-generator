@@ -1,25 +1,30 @@
 {
   "files": {
     "main.css": "/mask-pattern-generator/static/css/main.2758f41e.chunk.css",
-    "main.js": "/mask-pattern-generator/static/js/main.be559bb6.chunk.js",
-    "main.js.map": "/mask-pattern-generator/static/js/main.be559bb6.chunk.js.map",
+    "main.js": "/mask-pattern-generator/static/js/main.e014ff76.chunk.js",
+    "main.js.map": "/mask-pattern-generator/static/js/main.e014ff76.chunk.js.map",
     "runtime-main.js": "/mask-pattern-generator/static/js/runtime-main.3f0d6445.js",
     "runtime-main.js.map": "/mask-pattern-generator/static/js/runtime-main.3f0d6445.js.map",
     "static/css/2.af3c1da9.chunk.css": "/mask-pattern-generator/static/css/2.af3c1da9.chunk.css",
-    "static/js/2.00284b01.chunk.js": "/mask-pattern-generator/static/js/2.00284b01.chunk.js",
-    "static/js/2.00284b01.chunk.js.map": "/mask-pattern-generator/static/js/2.00284b01.chunk.js.map",
+    "static/js/2.5f842145.chunk.js": "/mask-pattern-generator/static/js/2.5f842145.chunk.js",
+    "static/js/2.5f842145.chunk.js.map": "/mask-pattern-generator/static/js/2.5f842145.chunk.js.map",
     "index.html": "/mask-pattern-generator/index.html",
-    "precache-manifest.80b35a80c891d1c0403849c9b9e5ad9c.js": "/mask-pattern-generator/precache-manifest.80b35a80c891d1c0403849c9b9e5ad9c.js",
+    "precache-manifest.7186ff21006ab101d47bf3c203aaf5f9.js": "/mask-pattern-generator/precache-manifest.7186ff21006ab101d47bf3c203aaf5f9.js",
     "service-worker.js": "/mask-pattern-generator/service-worker.js",
     "static/css/2.af3c1da9.chunk.css.map": "/mask-pattern-generator/static/css/2.af3c1da9.chunk.css.map",
     "static/css/main.2758f41e.chunk.css.map": "/mask-pattern-generator/static/css/main.2758f41e.chunk.css.map",
-    "static/js/2.00284b01.chunk.js.LICENSE.txt": "/mask-pattern-generator/static/js/2.00284b01.chunk.js.LICENSE.txt"
+    "static/js/2.5f842145.chunk.js.LICENSE.txt": "/mask-pattern-generator/static/js/2.5f842145.chunk.js.LICENSE.txt",
+    "static/media/face_mask_earloop.jpg": "/mask-pattern-generator/static/media/face_mask_earloop.7ac6b580.jpg",
+    "static/media/face_mask_laces.jpg": "/mask-pattern-generator/static/media/face_mask_laces.e6748e96.jpg",
+    "static/media/face_points_labels_2.jpg": "/mask-pattern-generator/static/media/face_points_labels_2.e8c859cd.jpg",
+    "static/media/face_points_lines2.jpg": "/mask-pattern-generator/static/media/face_points_lines2.6b16100e.jpg",
+    "static/media/face_points_lines_labels2.jpg": "/mask-pattern-generator/static/media/face_points_lines_labels2.84efa164.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.3f0d6445.js",
     "static/css/2.af3c1da9.chunk.css",
-    "static/js/2.00284b01.chunk.js",
+    "static/js/2.5f842145.chunk.js",
     "static/css/main.2758f41e.chunk.css",
-    "static/js/main.be559bb6.chunk.js"
+    "static/js/main.e014ff76.chunk.js"
   ]
 }
