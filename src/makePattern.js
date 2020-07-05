@@ -20,11 +20,6 @@ export class MaskPattern extends React.Component {
         this.earToNoseRiseAngle = degreeToRadian(5);
         this.tabWidth = 25;
         this.showLabels = true;
-
-        // The mask doesn't actually go all the way to the edge of the nostril before 
-        // turning up toward the bridge of the nose. It goes to about a finger width
-        // from the nostril. Closing the remaining gap is done by pinching the nose bridge
-        // when the wire is installed.
     }
     download() {
         fileDownload(
@@ -160,6 +155,19 @@ export class MaskPattern extends React.Component {
         return values;
     }
 
+    getLabelPoints() {
+        return [
+            this.earTop,
+            this.tabTop,
+            this.earBottom,
+            this.tabBottom,
+            this.bridgePoint,
+            this.nosePoint,
+            this.chinPoint,
+            this.throatPoint
+        ]
+    }
+
     render() {
         this.setDimensions(this.props);
         const points = this.makePoints()
@@ -187,7 +195,7 @@ export class MaskPattern extends React.Component {
                                 <PatternPolyline points={tabPolylinePoints}>
                                 </PatternPolyline>
                                 {this.showLabels &&
-                                    <VertexLabels points={points}></VertexLabels>}
+                                    <VertexLabels points={this.getLabelPoints()}></VertexLabels>}
                             </g>
                         </svg>
                         </Col>

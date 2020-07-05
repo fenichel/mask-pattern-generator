@@ -4,7 +4,7 @@ export class VertexLabels extends React.Component {
     render() {
         return (
             <>
-                {this.props.points.slice(0, this.props.points.length - 1).map(point => <g
+                {this.props.points.map(point => <g
                     key={point.label}>
                     <circle
                         cx={point.x} cy={point.y}
@@ -20,6 +20,14 @@ export class VertexLabels extends React.Component {
                         fontFamily='sans-serif'
                     >
                         {point.label}
+                    </text>
+                    <text
+                        x={point.x + 5}
+                        y={point.y + 5}
+                        fontSize='4px'
+                        fontFamily='sans-serif'
+                    >
+                        ({point.x.toFixed()}, {point.y.toFixed()})
                     </text>
                 </g>)
                 }
