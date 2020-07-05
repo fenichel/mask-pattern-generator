@@ -1,10 +1,13 @@
 import React from 'react';
 import fileDownload from 'svg-file-downloader';
 import Button from 'react-bootstrap/Button';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 import { Ruler } from './ruler';
 import { VertexLabels } from './VertexLabels';
-import { patternToSvg, cloneSvg } from './exportSvg';
-import { degreeToRadian, getX, getY, getAngleA, radianToDegree } from './trig';
+import { cloneSvg } from './exportSvg';
+import { degreeToRadian, getX, getY, getAngleA } from './trig';
+import { PatternPolyline } from './PatternPolyline';
 
 
 export class MaskPattern extends React.Component {
@@ -12,30 +15,15 @@ export class MaskPattern extends React.Component {
         super(props);
         this.setDimensions(props);
 
-        // There is a slight rise from the top of the ear to the nose.
-        this.earToNoseRise = 10;
-        this.nostrilToPointRun = 20;
-        //this.noseBridgeHeight = 20;
+        this.earToNoseRiseAngle = degreeToRadian(5);
+        this.tabWidth = 12;
         this.showLabels = true;
 
-        this.earTopToNostril = 95;
         // The mask doesn't actually go all the way to the edge of the nostril before 
         // turning up toward the bridge of the nose. It goes to about a finger width
         // from the nostril. Closing the remaining gap is done by pinching the nose bridge
         // when the wire is installed.
-        this.nostrilPointOffsetX = 15;
-        // ear top to nostril: 95
-        // nostril to bridge: 35
-        this.nostrilToBridge = 35;
-        this.nostrilToTip = 30;
-        // philtrum to nose tip: 22
-        // nostril to nostril: 40
-        // nose tip to bridge: 35
-        this.earBottomToThroat = 80;
-        this.chinToThroat = 20;
-        // ear bottom to throat: 80
-
-    }    
+    }
     download() {
         fileDownload(
             cloneSvg(),
@@ -43,7 +31,7 @@ export class MaskPattern extends React.Component {
             'testfile.svg')
     }
 
-    setEarTop(props) {
+    setEarTop() {
         this.earTop = {
             x: 0,
             y: 0,
@@ -51,68 +39,56 @@ export class MaskPattern extends React.Component {
         };
     }
 
-    setEarBottom(props) {
+    setEarBottom() {
         this.earBottom = {
             x: 0,
-            y: props.earHeight,
+            y: this.props.earHeight,
             label: "Ear bottom"
         };
     }
 
-    setNostrilPoint(props) {
-        // unused
-        this.nostrilPoint = {
-            x: props.earToNose - props.nostrilWidth / 2 - this.nostrilPointOffsetX,
-            y: -this.earToNoseRise,
-            label: "Edge of nostril"
-        }
-    }
+    setBridgePoint() {
+        const innerAngle = getAngleA(
+            this.props.bridgeToTip,
+            this.props.earToBridge,
+            this.props.earToNose);
+        const totalAngle = innerAngle + this.earToNoseRiseAngle;
 
-    setBridgePoint(props) {
-        const innerAngle = getAngleA(props.bridgeToTip, props.earToBridge, props.earToNose);
-        const totalAngle = innerAngle + degreeToRadian(5);
-        const x = getX(totalAngle, props.earToBridge);
-        const y = -getY(totalAngle, props.earToBridge);
         this.bridgePoint = {
-            x: x,
-            y: y,
+            x: getX(totalAngle, this.props.earToBridge),
+            y: -getY(totalAngle, this.props.earToBridge),
             label: "Bridge of nose"
         }
     }
 
-    setNoseTipPoint(props) {
-        let x = getX(degreeToRadian(5), props.earToNose);
-        let y = -getY(degreeToRadian(5), props.earToNose);
+    setNoseTipPoint() {
         this.nosePoint = {
-            x: x,
-            y: y,
+            x: getX(this.earToNoseRiseAngle, this.props.earToNose),
+            y: -getY(this.earToNoseRiseAngle, this.props.earToNose),
             label: "Tip of nose"
         }
     }
 
-    setChinPoint(props) {
+    setChinPoint() {
         this.chinPoint = {
             x: this.nosePoint.x,
-            y: this.nosePoint.y + props.noseToChin,
+            y: this.nosePoint.y + this.props.noseToChin,
             label: "Point of chin"
         }
     }
 
-    setThroatPoint(props) {
+    setThroatPoint() {
         const earBottomToChinX = this.chinPoint.x - this.earBottom.x;
         const earBottomToChinY = this.chinPoint.y - this.earBottom.y;
-        const earBottomToChinDistance = 
-                Math.sqrt(
-                    earBottomToChinX * earBottomToChinX + 
-                    earBottomToChinY * earBottomToChinY);
+        const earBottomToChinDistance =
+            Math.sqrt(
+                earBottomToChinX * earBottomToChinX +
+                earBottomToChinY * earBottomToChinY);
 
-        console.log('distance: ' + earBottomToChinDistance);
-    
         const lowerAngle = getAngleA(
-            props.chinToThroat, 
-            earBottomToChinDistance, 
-            props.earToThroat);
-console.log(lowerAngle);
+            this.props.chinToThroat,
+            earBottomToChinDistance,
+            this.props.earToThroat);
 
         const upperAngle = getAngleA(
             earBottomToChinY,
@@ -121,50 +97,41 @@ console.log(lowerAngle);
 
         const totalAngle = upperAngle + lowerAngle;
 
-        const x = this.earBottom.x + getX(totalAngle, props.earToThroat);
-        const y = this.earBottom.y + getY(totalAngle, props.earToThroat);
-        console.log(y);
+        const x = this.earBottom.x + getX(totalAngle, this.props.earToThroat);
+        const y = this.earBottom.y + getY(totalAngle, this.props.earToThroat);
+
         this.throatPoint = {
-            x: x,//props.earToThroat,//this.earBottomToThroat,
-            y: y, //this.chinPoint.y + this.chinToThroat,
+            x: x,
+            y: y,
             label: "Throat"
         }
     }
 
-    setTabPoints(props) {
+    setTabPoints() {
         this.tabTop = {
-            x: -12,
-            y: 0,
+            x: -this.tabWidth,
+            y: this.earTop.y,
             label: "Tab top"
         }
         this.tabBottom = {
-            x: -12,
+            x: -this.tabWidth,
             y: this.earBottom.y,
             label: "Tab bottom"
         }
     }
-    setDimensions(props) {
-
-        this.noseBridgeHeight = props.bridgeHeight;
-        this.nostrilWidth = props.nostrilWidth;
-        this.noseLength = props.noseLength;
-
-        this.setEarTop(props);
-        this.setEarBottom(props);
-        this.setNostrilPoint(props);
-        this.setBridgePoint(props);
-        this.setNoseTipPoint(props);
-        this.setChinPoint(props);
-        this.setThroatPoint(props);
-
-        this.setTabPoints(props)
+    setDimensions() {
+        this.setEarTop();
+        this.setEarBottom();
+        this.setBridgePoint();
+        this.setNoseTipPoint();
+        this.setChinPoint();
+        this.setThroatPoint();
+        this.setTabPoints()
     }
 
-    makePoints(props) {
-        this.setDimensions(props);
+    makePoints() {
         let points = [
             this.earTop,
-            //this.nostrilPoint,
             this.bridgePoint,
             this.nosePoint,
             this.chinPoint,
@@ -175,7 +142,7 @@ console.log(lowerAngle);
         return points;
     }
 
-    makeTabPoints(props){
+    makeTabPoints() {
         let points = [
             this.earTop,
             this.tabTop,
@@ -192,38 +159,36 @@ console.log(lowerAngle);
     }
 
     render() {
-        const points = this.makePoints(this.props)
+        this.setDimensions(this.props);
+        const points = this.makePoints()
         const polylinePoints = this.makePolylinePoints(points);
 
-        const tabPoints = this.makeTabPoints(this.props);
+        const tabPoints = this.makeTabPoints();
         const tabPolylinePoints = this.makePolylinePoints(tabPoints);
         return (
             <>
-                <svg 
-                width='250mm' 
-                height='250mm' 
-                viewBox='-50 -50 200 200' 
-                id='maskPattern'>
-                    <Ruler></Ruler>
-                    <g transform='translate(0, 0)'>
-                        <polyline
-                            points={polylinePoints}
-                            stroke='black'
-                            fill='none'
-                            strokeWidth='.5px'
-                        ></polyline>
-                                                <polyline
-                        points={tabPolylinePoints}
-                        stroke='black'
-                        fill='none'
-                        strokeWidth='.5px'
-                    ></polyline>
-                        {this.showLabels &&
-                            <VertexLabels points={points}></VertexLabels>}
-                    </g>
-                </svg>
-                <Button onClick={this.download}>Download pattern</Button>
-
+                <Col>
+                    <Row>
+                        <Button onClick={this.download}>Download pattern</Button>
+                    </Row>
+                    <Row>
+                        <svg
+                            width='300mm'
+                            height='300mm'
+                            viewBox='-20 -75 280 225'
+                            id='maskPattern'>
+                            <Ruler></Ruler>
+                            <g transform='translate(0, 0)'>
+                                <PatternPolyline points={polylinePoints}>
+                                </PatternPolyline>
+                                <PatternPolyline points={tabPolylinePoints}>
+                                </PatternPolyline>
+                                {this.showLabels &&
+                                    <VertexLabels points={points}></VertexLabels>}
+                            </g>
+                        </svg>
+                    </Row>
+                </Col>
             </>)
     }
 }

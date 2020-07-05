@@ -17,6 +17,5 @@ export function getY(degreeRadian, hypotenuse) {
 export function getAngleA(a, b, c) {
     const numerator = b*b + c*c - a*a
     const denominator = 2 * b * c;
-    console.log(a + ', ' + b + ', ' + c);
     return Math.acos(numerator / denominator);
 }
