@@ -18,22 +18,22 @@ export class DimensionInput extends React.Component {
             <Form.Group as={Row} controlId={this.props.id}>
                 <Col>
                     <Form.Label
-                        className='labelText'>{this.props.label}
+                        className='labelText' size='sm'>{this.props.label}
                     </Form.Label>
                 </Col>
-                <Col md='4'>
-                <InputGroup>
-                    <Form.Control
-                        type="number"
-                        placeholder={this.props.label}
-                        value={this.props.val}
-                        onChange={this.handleChange}
-                        name={this.props.id}
-                    >
-                    </Form.Control>
-                    <InputGroup.Append>
-                        <InputGroup.Text>mm</InputGroup.Text>
-                    </InputGroup.Append>
+                <Col md='5'>
+                    <InputGroup size='sm'>
+                        <Form.Control
+                            type="number"
+                            placeholder={this.props.label}
+                            value={this.props.val}
+                            onChange={this.handleChange}
+                            name={this.props.id}
+                        >
+                        </Form.Control>
+                        <InputGroup.Append>
+                            <InputGroup.Text>mm</InputGroup.Text>
+                        </InputGroup.Append>
                     </InputGroup>
                 </Col>
             </Form.Group>

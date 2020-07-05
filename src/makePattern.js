@@ -7,7 +7,9 @@ import { Ruler } from './ruler';
 import { VertexLabels } from './VertexLabels';
 import { cloneSvg } from './exportSvg';
 import { degreeToRadian, getX, getY, getAngleA } from './trig';
+import face_points_lines_labels2 from './face_points_lines_labels2.jpg';
 import { PatternPolyline } from './PatternPolyline';
+import Image from 'react-bootstrap/Image';
 
 
 export class MaskPattern extends React.Component {
@@ -28,7 +30,7 @@ export class MaskPattern extends React.Component {
         fileDownload(
             cloneSvg(),
             false,
-            'testfile.svg')
+            'maskPattern.svg')
     }
 
     setEarTop() {
@@ -172,6 +174,7 @@ export class MaskPattern extends React.Component {
                         <Button onClick={this.download}>Download pattern</Button>
                     </Row>
                     <Row>
+                        <Col fluid>
                         <svg
                             width='300mm'
                             height='300mm'
@@ -187,6 +190,7 @@ export class MaskPattern extends React.Component {
                                     <VertexLabels points={points}></VertexLabels>}
                             </g>
                         </svg>
+                        </Col>
                     </Row>
                 </Col>
             </>)
