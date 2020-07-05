@@ -16,6 +16,7 @@ export class MaskPattern extends React.Component {
         this.setDimensions(props);
 
         this.earToNoseRiseAngle = degreeToRadian(5);
+        this.noseChinAngle = degreeToRadian(85);
         this.tabWidth = 25;
         this.showLabels = true;
     }
@@ -66,8 +67,8 @@ export class MaskPattern extends React.Component {
 
     setChinPoint() {
         this.chinPoint = {
-            x: this.nosePoint.x,
-            y: this.nosePoint.y + this.props.noseToChin,
+            x: this.nosePoint.x - getX(this.noseChinAngle, this.nosePoint.x),
+            y: this.nosePoint.y + getY(this.noseChinAngle, this.props.noseToChin),
             label: "Point of chin"
         }
     }
