@@ -1,12 +1,8 @@
 import React from 'react';
-import Image from 'react-bootstrap/Image';
-import face_mask_earloop from './face_mask_earloop.jpg';
-import face_mask_laces from './face_mask_laces.jpg';
 import face_points_labels_2 from './face_points_labels_2.jpg';
 import face_points_lines_labels2 from './face_points_lines_labels2.jpg';
 import face_points_lines2 from './face_points_lines2.jpg';
 
-import Figure from 'react-bootstrap/Figure';
 import { MeasurementFigure } from './MeasurementFigure';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Container from 'react-bootstrap/Container';
@@ -18,14 +14,6 @@ export class MeasurementInstructions extends React.Component {
             <>
                 <Container>
                     <ListGroup variant='flush'>
-                        {/* <MeasurementFigure
-                    imgSrc={face_mask_earloop}
-                    caption='Our model wearing a face mask with elastic earloops.'>
-                </MeasurementFigure>
-                <MeasurementFigure
-                    imgSrc={face_mask_laces}
-                    caption='Our model wearing a face mask with laces behind the neck and over the top of the head.'>
-                </MeasurementFigure> */}
                         <MeasurementFigure
                             imgSrc={face_points_labels_2}
                             caption='To size your mask you will measure the distances between a few points on your face.'>

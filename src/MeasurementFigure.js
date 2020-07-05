@@ -1,6 +1,5 @@
 import React from 'react';
 import Figure from 'react-bootstrap/Figure';
-import Row from 'react-bootstrap/Row';
 import ListGroup from 'react-bootstrap/ListGroup';
 
 export class MeasurementFigure extends React.Component {

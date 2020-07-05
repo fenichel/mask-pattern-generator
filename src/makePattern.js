@@ -7,9 +7,7 @@ import { Ruler } from './ruler';
 import { VertexLabels } from './VertexLabels';
 import { cloneSvg } from './exportSvg';
 import { degreeToRadian, getX, getY, getAngleA } from './trig';
-import face_points_lines_labels2 from './face_points_lines_labels2.jpg';
 import { PatternPolyline } from './PatternPolyline';
-import Image from 'react-bootstrap/Image';
 
 
 export class MaskPattern extends React.Component {
