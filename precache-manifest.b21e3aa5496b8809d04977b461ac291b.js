@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "a9a553e3fbc18147ce51d26b46205fb7",
+    "revision": "7f159d29037e508475123cd7409c26cc",
     "url": "/mask-pattern-generator/index.html"
   },
   {
-    "revision": "8ab553dfaa1f212b3af8",
+    "revision": "c816fd2599735e45179a",
     "url": "/mask-pattern-generator/static/css/2.af3c1da9.chunk.css"
   },
   {
-    "revision": "dde590411d9da703f85e",
-    "url": "/mask-pattern-generator/static/css/main.982bbece.chunk.css"
+    "revision": "1fd3b305503d22ed690f",
+    "url": "/mask-pattern-generator/static/css/main.44aaf7c3.chunk.css"
   },
   {
-    "revision": "8ab553dfaa1f212b3af8",
-    "url": "/mask-pattern-generator/static/js/2.1e8ef1bc.chunk.js"
+    "revision": "c816fd2599735e45179a",
+    "url": "/mask-pattern-generator/static/js/2.02bb11b0.chunk.js"
   },
   {
     "revision": "5ac48c47bb3912b14c2d8de4f56d5ae8",
-    "url": "/mask-pattern-generator/static/js/2.1e8ef1bc.chunk.js.LICENSE.txt"
+    "url": "/mask-pattern-generator/static/js/2.02bb11b0.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "dde590411d9da703f85e",
-    "url": "/mask-pattern-generator/static/js/main.a45dadff.chunk.js"
+    "revision": "1fd3b305503d22ed690f",
+    "url": "/mask-pattern-generator/static/js/main.a83a526b.chunk.js"
   },
   {
     "revision": "aa79edeb61d59ad695ef",
@@ -46,5 +46,9 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "84efa164683b529e8cb75dd02781f578",
     "url": "/mask-pattern-generator/static/media/face_points_lines_labels2.84efa164.jpg"
+  },
+  {
+    "revision": "79463d1a4e84297825382517b30b8585",
+    "url": "/mask-pattern-generator/static/media/theMath.79463d1a.svg"
   }
 ]);
