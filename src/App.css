@@ -38,3 +38,7 @@ margin: 10px;
 .patternSvgPoint {
   stroke: black
 }
+
+.feedbackText {
+  font-style: italic;
+}

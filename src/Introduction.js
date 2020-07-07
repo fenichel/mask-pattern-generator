@@ -12,10 +12,10 @@ export class Introduction extends React.Component {
                 <p>
                     This is v1 of a utility for generating sewing patterns for custom masks, based on the dimensions of your face.
   </p>
+                <p>I'm still iterating on the pattern and trying to dial in my math--if it doesn't fit right on you, please let me know and/or come back in a week to try again.</p>
                 <p>
                     Use the tabs at the top of the page to navigate.
   </p>
-                <p>Made by Rachel Fenichel in July 2020.</p>
 
                 <img
                     src={face_mask_earloop}
@@ -27,9 +27,9 @@ export class Introduction extends React.Component {
                     height='500'
                     alt='Our model wearing a face mask with laces behind the neck and over the top of the head.'>
                 </img>
-                <p>
-                    Have a suggestion? Want to fix my css? File an issue or make a pull request against <a href="https://github.com/fenichel/mask-pattern-generator/issues">my GitHub repo</a>.
-                </p>
+
+                
+                <p>Made by Rachel Fenichel. Last updated July 7 2020.</p>
             </Jumbotron>)
     }
 }
