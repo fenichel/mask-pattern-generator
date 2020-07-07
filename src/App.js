@@ -9,7 +9,7 @@ import MyForm from './Form.js';
 import { SewingInstructions } from './SewingInstructions';
 import { MeasurementInstructions } from './MeasurementInstructions';
 import { Introduction } from './Introduction';
-
+import { TheMath } from './TheMath';
 
 function App() {
   return (
@@ -30,6 +30,9 @@ function App() {
           </Container>    </Tab>
         <Tab eventKey="sewing" title="Sewing instructions">
           <SewingInstructions></SewingInstructions>
+        </Tab>
+        <Tab eventKey="theMath" title="Show me the math!">
+          <TheMath className='theMath'></TheMath>
         </Tab>
       </Tabs>
 

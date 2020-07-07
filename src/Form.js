@@ -37,15 +37,15 @@ class MyForm extends React.Component {
     render() {
         return (
             <>
-                <Row fluid="true">
+                <Row>
                     <Form>
                         <Row>
-                            <Col fluid>
+                            <Col>
                                 <Image
                                     src={face_points_lines_labels2}
                                     width={500}
                                     height={500}
-                                    fluid></Image>
+                                    fluid="lg"></Image>
                             </Col>
                             <Col>
                                 <NameInput

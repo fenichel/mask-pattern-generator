@@ -16,12 +16,12 @@ export class DimensionInput extends React.Component {
     render() {
         return (
             <Form.Group as={Row} controlId={this.props.id}>
-                <Col>
+                <Col md='5'>
                     <Form.Label
                         className='labelText' size='sm'>{this.props.label}
                     </Form.Label>
                 </Col>
-                <Col md='5'>
+                <Col md='6'>
                     <InputGroup size='sm'>
                         <Form.Control
                             type="number"
