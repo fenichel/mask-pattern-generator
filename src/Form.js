@@ -19,7 +19,7 @@ class MyForm extends React.Component {
             bridgeToTip: 30,
             earToBridge: 110,
             chinToThroat: 55,
-            patternName: 'Mask Pattern'
+            patternName: 'Your name here'
         }
         this.handleInputChange =
             this.handleInputChange.bind(this);
@@ -112,6 +112,7 @@ class MyForm extends React.Component {
                         bridgeToTip={this.state.bridgeToTip}
                         earToBridge={this.state.earToBridge}
                         chinToThroat={this.state.chinToThroat}
+                        patternName={this.state.patternName}
                     >
                     </MaskPattern>
                 </Row>

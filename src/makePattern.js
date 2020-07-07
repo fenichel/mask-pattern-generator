@@ -95,7 +95,7 @@ export class MaskPattern extends React.Component {
             earBottomToChinDistance);
 
         const totalAngle = upperAngle + lowerAngle;
-        
+
         const x = this.earBottom.x + getX(totalAngle, this.props.earToThroat);
         const y = this.earBottom.y + getY(totalAngle, this.props.earToThroat);
 
@@ -187,9 +187,17 @@ export class MaskPattern extends React.Component {
                         <svg
                             width='300mm'
                             height='300mm'
-                            viewBox='-50 -75 250 225'
+                            viewBox='-50 -55 250 245'
                             id='maskPattern'>
                             <Ruler></Ruler>
+                            <text
+                                x='-15'
+                                y='-52'
+                                fontSize='4px'
+                                fontFamily='sans-serif'>
+                                    {this.props.patternName}
+                            </text>
+
                             <g transform='translate(0, 0)'>
                                 <PatternPolyline points={polylinePoints}>
                                 </PatternPolyline>
