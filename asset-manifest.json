@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/mask-pattern-generator/static/css/main.44aaf7c3.chunk.css",
-    "main.js": "/mask-pattern-generator/static/js/main.a83a526b.chunk.js",
-    "main.js.map": "/mask-pattern-generator/static/js/main.a83a526b.chunk.js.map",
+    "main.css": "/mask-pattern-generator/static/css/main.e2ced346.chunk.css",
+    "main.js": "/mask-pattern-generator/static/js/main.d763bff5.chunk.js",
+    "main.js.map": "/mask-pattern-generator/static/js/main.d763bff5.chunk.js.map",
     "runtime-main.js": "/mask-pattern-generator/static/js/runtime-main.3f0d6445.js",
     "runtime-main.js.map": "/mask-pattern-generator/static/js/runtime-main.3f0d6445.js.map",
     "static/css/2.af3c1da9.chunk.css": "/mask-pattern-generator/static/css/2.af3c1da9.chunk.css",
     "static/js/2.02bb11b0.chunk.js": "/mask-pattern-generator/static/js/2.02bb11b0.chunk.js",
     "static/js/2.02bb11b0.chunk.js.map": "/mask-pattern-generator/static/js/2.02bb11b0.chunk.js.map",
     "index.html": "/mask-pattern-generator/index.html",
-    "precache-manifest.b21e3aa5496b8809d04977b461ac291b.js": "/mask-pattern-generator/precache-manifest.b21e3aa5496b8809d04977b461ac291b.js",
+    "precache-manifest.5ecfe34154a5bcb8dde9449117cc2f0a.js": "/mask-pattern-generator/precache-manifest.5ecfe34154a5bcb8dde9449117cc2f0a.js",
     "service-worker.js": "/mask-pattern-generator/service-worker.js",
     "static/css/2.af3c1da9.chunk.css.map": "/mask-pattern-generator/static/css/2.af3c1da9.chunk.css.map",
-    "static/css/main.44aaf7c3.chunk.css.map": "/mask-pattern-generator/static/css/main.44aaf7c3.chunk.css.map",
+    "static/css/main.e2ced346.chunk.css.map": "/mask-pattern-generator/static/css/main.e2ced346.chunk.css.map",
     "static/js/2.02bb11b0.chunk.js.LICENSE.txt": "/mask-pattern-generator/static/js/2.02bb11b0.chunk.js.LICENSE.txt",
     "static/media/face_mask_earloop.jpg": "/mask-pattern-generator/static/media/face_mask_earloop.7ac6b580.jpg",
     "static/media/face_mask_laces.jpg": "/mask-pattern-generator/static/media/face_mask_laces.e6748e96.jpg",
@@ -25,7 +25,7 @@
     "static/js/runtime-main.3f0d6445.js",
     "static/css/2.af3c1da9.chunk.css",
     "static/js/2.02bb11b0.chunk.js",
-    "static/css/main.44aaf7c3.chunk.css",
-    "static/js/main.a83a526b.chunk.js"
+    "static/css/main.e2ced346.chunk.css",
+    "static/js/main.d763bff5.chunk.js"
   ]
 }
