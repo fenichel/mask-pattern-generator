@@ -1,15 +1,3 @@
-
-
-        // patternToSvg(function(datauri) {
-        //     var a = document.createElement('a');
-        //     a.download = 'screenshot.png';
-        //     a.target = '_self';
-        //     a.href = datauri;
-        //     document.body.appendChild(a);
-        //     a.click();
-        //     a.parentNode.removeChild(a);
-        //   });
-
 /**
  * Convert an SVG datauri into a PNG datauri.
  * @param {string} data SVG datauri.

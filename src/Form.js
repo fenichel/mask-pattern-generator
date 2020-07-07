@@ -6,6 +6,7 @@ import { DimensionInput } from './DimensionInput';
 import { MaskPattern } from './makePattern';
 import face_points_lines_labels2 from './face_points_lines_labels2.jpg';
 import Image from 'react-bootstrap/Image';
+import { NameInput } from './NameInput';
 
 class MyForm extends React.Component {
     constructor(props) {
@@ -17,7 +18,8 @@ class MyForm extends React.Component {
             earToThroat: 90,
             bridgeToTip: 30,
             earToBridge: 110,
-            chinToThroat: 55
+            chinToThroat: 55,
+            patternName: 'Mask Pattern'
         }
         this.handleInputChange =
             this.handleInputChange.bind(this);
@@ -26,8 +28,9 @@ class MyForm extends React.Component {
     handleInputChange(event) {
         const target = event.target;
         const name = target.name;
+        const val = (name === 'patternName') ? target.value : parseInt(target.value);
         this.setState({
-            [name]: parseInt(target.value)
+            [name]: val
         })
     }
 
@@ -37,14 +40,20 @@ class MyForm extends React.Component {
                 <Row fluid="true">
                     <Form>
                         <Row>
-                        <Col fluid>
-                    <Image
-                    src={face_points_lines_labels2}
-                    width={500}
-                    height={500}
-                    fluid></Image>
-                </Col>
+                            <Col fluid>
+                                <Image
+                                    src={face_points_lines_labels2}
+                                    width={500}
+                                    height={500}
+                                    fluid></Image>
+                            </Col>
                             <Col>
+                                <NameInput
+                                    id="patternName"
+                                    label="Name"
+                                    val={this.state.patternName}
+                                    onValueChange={this.handleInputChange}>
+                                </NameInput>
                                 <DimensionInput
                                     id="earToBridge"
                                     label="Ear top to nose bridge (A to B)"
@@ -63,14 +72,14 @@ class MyForm extends React.Component {
                                     val={this.state.bridgeToTip}
                                     onValueChange={this.handleInputChange}>
                                 </DimensionInput>
+                            </Col>
+                            <Col>
                                 <DimensionInput
                                     id="noseToChin"
                                     label="Nose to chin with mouth open to talk (C to D)"
                                     val={this.state.noseToChin}
                                     onValueChange={this.handleInputChange}>
                                 </DimensionInput>
-                            </Col>
-                            <Col>
                                 <DimensionInput
                                     id="chinToThroat"
                                     label="Chin to throat (D to E)"
@@ -89,7 +98,6 @@ class MyForm extends React.Component {
                                     val={this.state.earHeight}
                                     onValueChange={this.handleInputChange}>
                                 </DimensionInput>
-
 
                             </Col>
                         </Row>
