@@ -18,6 +18,7 @@ export class MaskPattern extends React.Component {
         this.earToNoseRiseAngle = degreeToRadian(5);
         this.noseChinAngle = degreeToRadian(85);
         this.tabWidth = 25;
+        this.chinToThroatOffset = 10;
         this.showLabels = true;
     }
     download() {
@@ -81,8 +82,10 @@ export class MaskPattern extends React.Component {
                 earBottomToChinX * earBottomToChinX +
                 earBottomToChinY * earBottomToChinY);
 
+
+        const adjustedChinToThroat = this.props.chinToThroat - this.chinToThroatOffset;
         const lowerAngle = getAngleA(
-            this.props.chinToThroat,
+            adjustedChinToThroat,
             earBottomToChinDistance,
             this.props.earToThroat);
 
@@ -92,7 +95,7 @@ export class MaskPattern extends React.Component {
             earBottomToChinDistance);
 
         const totalAngle = upperAngle + lowerAngle;
-
+        
         const x = this.earBottom.x + getX(totalAngle, this.props.earToThroat);
         const y = this.earBottom.y + getY(totalAngle, this.props.earToThroat);
 
@@ -181,7 +184,6 @@ export class MaskPattern extends React.Component {
                         <Button onClick={this.download}>Download pattern</Button>
                     </Row>
                     <Row>
-                        <Col fluid>
                         <svg
                             width='300mm'
                             height='300mm'
@@ -197,7 +199,6 @@ export class MaskPattern extends React.Component {
                                     <VertexLabels points={this.getLabelPoints()}></VertexLabels>}
                             </g>
                         </svg>
-                        </Col>
                     </Row>
                 </Col>
             </>)
