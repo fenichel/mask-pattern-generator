@@ -21,6 +21,22 @@ const DEFAULT_MEASURES_IN_MM = {
 };
 const PLACEHOLDER_NAME = 'Your name here';
 
+const MM_PER_IN = 25.4;
+
+// Converts the canon measure in millimeters to the requested unit, in a conveniently rounded number.
+const FromMillimetersToUserVisible = {
+    "mm": mm => Math.round(mm),
+    "cm": mm => Math.round(mm) / 10,  // Rounded to 0.1cm
+    "in": mm => Math.round( 100 * mm / MM_PER_IN ) / 100  // Rounded to 0.01in
+}
+
+// Converts the measure in the requested unit to millimeters.
+const ToMillimeters = {
+    "mm": mm => mm,
+    "cm": cm => cm * 10,
+    "in": inches => inches * MM_PER_IN
+}
+
 function buildInitialState() {
     const state = {
         unit: 'mm',
@@ -46,20 +62,24 @@ class MyForm extends React.Component {
         const target = event.target;
         const name = target.name;
         if (name === 'unit') {
-            console.log('unit: ' + target.value);
-            // TODO: Convert existing values to new unit.
-            this.setState({
-                'unit': target.value
+            const unit = target.value;
+            const newState = {
+                'unit': unit
+            };
+
+            // Convert existing values to new unit.
+            Object.keys(DEFAULT_MEASURES_IN_MM).forEach((key) => {
+                newState[key] = FromMillimetersToUserVisible[unit](this.state[key+"InMM"])
             });
+
+            this.setState(newState);
         } else if (name === 'patternName') {
             this.setState({
                 'patternName': target.value
             });
         } else { // measurementChanged
-            // TODO: Support floats, at least if unit isn't millimeters
-            const measure = parseInt(target.value)
-            // TODO: Convert from current unit
-            const measureInMM = measure;
+            const measure = parseFloat(target.value)
+            const measureInMM = ToMillimeters[this.state.unit](measure)
             this.setState({
                 [name]: measure,
                 [name + 'InMM']: measureInMM
@@ -161,15 +181,14 @@ class MyForm extends React.Component {
                 <Container>
                     <MaskPattern
                         patternName={this.state.patternName}
-                        noseToChin={this.state.noseToChinInMM}
-                        earHeight={this.state.earHeightInMM}
-                        earToNose={this.state.earToNoseInMM}
-                        earToThroat={this.state.earToThroatInMM}
-                        bridgeToTip={this.state.bridgeToTipInMM}
-                        earToBridge={this.state.earToBridgeInMM}
-                        chinToThroat={this.state.chinToThroatInMM}
-                    >
-                    </MaskPattern>
+                        noseToChin={Math.ceil(this.state.noseToChinInMM)}
+                        earHeight={Math.ceil(this.state.earHeightInMM)}
+                        earToNose={Math.ceil(this.state.earToNoseInMM)}
+                        earToThroat={Math.ceil(this.state.earToThroatInMM)}
+                        bridgeToTip={Math.ceil(this.state.bridgeToTipInMM)}
+                        earToBridge={Math.ceil(this.state.earToBridgeInMM)}
+                        chinToThroat={Math.ceil(this.state.chinToThroatInMM)}
+                    />
                 </Container>
             </>
         );
