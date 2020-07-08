@@ -2,7 +2,6 @@ import React from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import Container from 'react-bootstrap/Container';
 import Tabs from 'react-bootstrap/Tabs';
 import Tab from 'react-bootstrap/Tab';
 import MyForm from './Form.js';
@@ -17,26 +16,26 @@ function App() {
     <div className="App">
       <Tabs
         defaultActiveKey="introduction"
+        id="navtabs"
         transition={false}>
           <Tab eventKey="introduction" title="Introduction">
-            <Introduction></Introduction>
+            <Introduction />
           </Tab>
         <Tab eventKey="measuring" title="Measurement instructions">
 
-          <MeasurementInstructions></MeasurementInstructions>
+          <MeasurementInstructions />
         </Tab>
         <Tab eventKey="createPattern" title="Create Pattern">
-          <Container>
-            <MyForm></MyForm>
-          </Container>    </Tab>
+          <MyForm />
+        </Tab>
         <Tab eventKey="sewing" title="Sewing instructions">
-          <SewingInstructions></SewingInstructions>
+          <SewingInstructions />
         </Tab>
         <Tab eventKey="theMath" title="Show me the math!">
-          <TheMath className='theMath'></TheMath>
+          <TheMath className='theMath' />
         </Tab>
       </Tabs>
-    <Feedback></Feedback>
+    <Feedback />
     </div>
   );
 }

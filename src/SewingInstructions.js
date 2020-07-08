@@ -4,38 +4,38 @@ export class SewingInstructions extends React.Component {
     render() {
         return (
             <>
-            <p>Images will be here soon! Until then, here are text-only instructions. All seams use a 1/4" (6mm) seam allowance.</p>
-            <p>
-                Measure your face and use the Create Pattern tab to create and download your pattern.
-            </p>
-            <p>
-                Open your pattern with a browser and print it.
-            </p>
-            <p>
-                Use a ruler to check that the line at the top left is 5 cm long. 
-            </p>
-            <p>
-                If it's the wrong length, adjust your print settings until the line is the correct length.
-            </p>
-            <h2>
-                Cut your pattern and fabric
-            </h2>
-            <p>
-                Cut your paper pattern out, including the tab to the left of the ear.
-            </p>
-            <p>
-                Fold your fabric in half and place the tip-of-nose to point-of-chin line on the fold.
-            </p>
-            <p>
-                Cut two pieces on fold. (Optionally, cut one piece from a liner fabric for the inside, and one pieces from a showy fabric for the outside).
-            </p>
-            <p>
-                Fold each piece along the tip-of-nose to point-of-chin line, right sides together.
-            </p>
-            <p>
-                On each piece, sew from the bridge of the nose to the tip of the nose and fron the point of the chin to the throat, using a 1/4" (6mm) seam allowance.
-            </p>
-            <p>
+                <p>Images will be here soon! Until then, here are text-only instructions. All seams use a 1/4" (6mm) seam allowance.</p>
+                <p>
+                    Measure your face and use the Create Pattern tab to create and download your pattern.
+                </p>
+                <p>
+                    Open your pattern with a browser and print it.
+                </p>
+                <p>
+                    Use a ruler to check that the line at the top left is 5 cm long.
+                </p>
+                <p>
+                    If it's the wrong length, adjust your print settings until the line is the correct length.
+                </p>
+                <h2>
+                    Cut your pattern and fabric
+                </h2>
+                <p>
+                    Cut your paper pattern out, including the tab to the left of the ear.
+                </p>
+                <p>
+                    Fold your fabric in half and place the tip-of-nose to point-of-chin line on the fold.
+                </p>
+                <p>
+                    Cut two pieces on fold. (Optionally, cut one piece from a liner fabric for the inside, and one pieces from a showy fabric for the outside).
+                </p>
+                <p>
+                    Fold each piece along the tip-of-nose to point-of-chin line, right sides together.
+                </p>
+                <p>
+                    On each piece, sew from the bridge of the nose to the tip of the nose and fron the point of the chin to the throat, using a 1/4" (6mm) seam allowance.
+                </p>
+                <p>
                 On each piece, clip the corners at the tip of nose and point of chin, then press the seams open.
                 </p>
                 <p>
@@ -116,7 +116,6 @@ export class SewingInstructions extends React.Component {
                 <p>
                     There are many other ways to set up your straps, including a single strap that runs through the tunnels and is adjusted with a toggle or by tying it when you put the mask on.
                 </p>
-            </>)
+            </>);
     }
 }
-

@@ -20,9 +20,7 @@ export class TheMath extends React.Component {
                 <p>I'm trying to map from a few critical measurements to a flat pattern, but that flat pattern has to take into account the curvature of the human face.</p>
                 <p>I'm accomplishing that by mirroring on the line from the nose to the chin, and essentially applying darts above the nose and below the chin.</p>
                 <p>Since I only used straight lines, finding the coordinates of all of my critical points involved drawing lots of triangles:</p>
-                <Image
-                    src={theMath}
-                ></Image>
+                <Image src={theMath} />
                 <ul>
                     <li>Point A is at the origin (0, 0).</li>
                     <li>Point F is directly below A. The vertical distance between them is given by the measured ear height.</li>
@@ -47,6 +45,7 @@ export class TheMath extends React.Component {
                     <li>The rest of the coordinates can be found by similar applications of the law of cosines and SOHCAHTOA, and are left as an exercise for the reader.</li>
                     
                 </ul>Found a bug in my math? Think my math checks out but my assumptions are wrong? File an issue or make a pull request against <a href="https://github.com/fenichel/mask-pattern-generator/issues">my GitHub repo</a>.
-            </>)
+            </>
+        );
     }
 }
