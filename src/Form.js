@@ -7,20 +7,36 @@ import { MaskPattern } from './makePattern';
 import face_points_lines_labels2 from './face_points_lines_labels2.jpg';
 import Image from 'react-bootstrap/Image';
 import { NameInput } from './NameInput';
+import { UnitSelector } from "./UnitSelector";
+
+const DEFAULT_MEASURES_IN_MM = {
+    noseToChin: 95,
+    earHeight: 45,
+    earToNose: 115,
+    earToThroat: 90,
+    bridgeToTip: 30,
+    earToBridge: 110,
+    chinToThroat: 55
+};
+const PLACEHOLDER_NAME = 'Your name here';
+
+function buildInitialState() {
+    const state = {
+        unit: 'mm',
+        patternName: PLACEHOLDER_NAME
+    };
+    Object.keys(DEFAULT_MEASURES_IN_MM).forEach((key) => {
+        const mm = DEFAULT_MEASURES_IN_MM[key];
+        state[key] = mm;
+        state[key + 'InMM'] = mm;
+    });
+    return state;
+}
 
 class MyForm extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            noseToChin: 95,
-            earHeight: 45,
-            earToNose: 115,
-            earToThroat: 90,
-            bridgeToTip: 30,
-            earToBridge: 110,
-            chinToThroat: 55,
-            patternName: 'Your name here'
-        }
+        this.state = buildInitialState();
         this.handleInputChange =
             this.handleInputChange.bind(this);
     }
@@ -28,10 +44,26 @@ class MyForm extends React.Component {
     handleInputChange(event) {
         const target = event.target;
         const name = target.name;
-        const val = (name === 'patternName') ? target.value : parseInt(target.value);
-        this.setState({
-            [name]: val
-        })
+        if (name === 'unit') {
+            console.log('unit: ' + target.value);
+            // TODO: Convert existing values to new unit.
+            this.setState({
+                'unit': target.value
+            });
+        } else if (name === 'patternName') {
+            this.setState({
+                'patternName': target.value
+            });
+        } else { // measurementChanged
+            // TODO: Support floats, at least if unit isn't millimeters
+            const measure = parseInt(target.value)
+            // TODO: Convert from current unit
+            const measureInMM = measure;
+            this.setState({
+                [name]: measure,
+                [name + 'InMM']: measureInMM
+            })
+        }
     }
 
     render() {
@@ -58,7 +90,11 @@ class MyForm extends React.Component {
                                         </NameInput>
                                     </Col>
                                     <Col>
-                                        <div>Unit of measure:</div>
+                                        <UnitSelector
+                                            id="unit"
+                                            label="Units"
+                                            val={this.state.unit}
+                                            onValueChange={this.handleInputChange}></UnitSelector>
                                     </Col>
                                 </Row>
                                 <Row>
@@ -115,14 +151,14 @@ class MyForm extends React.Component {
                 </Row>
                 <Row>
                     <MaskPattern
-                        noseToChin={this.state.noseToChin}
-                        earHeight={this.state.earHeight}
-                        earToNose={this.state.earToNose}
-                        earToThroat={this.state.earToThroat}
-                        bridgeToTip={this.state.bridgeToTip}
-                        earToBridge={this.state.earToBridge}
-                        chinToThroat={this.state.chinToThroat}
                         patternName={this.state.patternName}
+                        noseToChin={this.state.noseToChinInMM}
+                        earHeight={this.state.earHeightInMM}
+                        earToNose={this.state.earToNoseInMM}
+                        earToThroat={this.state.earToThroatInMM}
+                        bridgeToTip={this.state.bridgeToTipInMM}
+                        earToBridge={this.state.earToBridgeInMM}
+                        chinToThroat={this.state.chinToThroatInMM}
                     >
                     </MaskPattern>
                 </Row>
