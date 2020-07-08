@@ -36,7 +36,7 @@ function App() {
           <TheMath className='theMath'></TheMath>
         </Tab>
       </Tabs>
-<Feedback></Feedback>
+    <Feedback></Feedback>
     </div>
   );
 }

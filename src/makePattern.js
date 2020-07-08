@@ -9,7 +9,6 @@ import { cloneSvg } from './exportSvg';
 import { degreeToRadian, getX, getY, getAngleA } from './trig';
 import { PatternPolyline } from './PatternPolyline';
 
-
 export class MaskPattern extends React.Component {
     constructor(props) {
         super(props);
@@ -17,15 +16,15 @@ export class MaskPattern extends React.Component {
 
         this.earToNoseRiseAngle = degreeToRadian(5);
         this.noseChinAngle = degreeToRadian(85);
+        // The width of the tab for the strap, in mm
         this.tabWidth = 25;
-        this.chinToThroatOffset = 10;
+        // The offset I apply to the measured chin to throat length, in mm.
+        this.chinToThroatOffset = -10;
+        // Whether to show labels on the points.
         this.showLabels = true;
     }
     download() {
-        fileDownload(
-            cloneSvg(),
-            false,
-            'maskPattern.svg')
+        fileDownload(cloneSvg(), false, 'maskPattern.svg');
     }
 
     setEarTop() {
@@ -45,6 +44,7 @@ export class MaskPattern extends React.Component {
     }
 
     setBridgePoint() {
+        // Use the law of cosines on the triangle between points ABC to get the angle.
         const innerAngle = getAngleA(
             this.props.bridgeToTip,
             this.props.earToBridge,
@@ -82,8 +82,7 @@ export class MaskPattern extends React.Component {
                 earBottomToChinX * earBottomToChinX +
                 earBottomToChinY * earBottomToChinY);
 
-
-        const adjustedChinToThroat = this.props.chinToThroat - this.chinToThroatOffset;
+        const adjustedChinToThroat = this.props.chinToThroat + this.chinToThroatOffset;
         const lowerAngle = getAngleA(
             adjustedChinToThroat,
             earBottomToChinDistance,
@@ -118,6 +117,7 @@ export class MaskPattern extends React.Component {
             label: "Tab bottom"
         }
     }
+
     setDimensions() {
         this.setEarTop();
         this.setEarBottom();
@@ -151,12 +151,26 @@ export class MaskPattern extends React.Component {
         return points;
     }
 
-    makePolylinePoints(points) {
+    getOutlinePoints() {
+        let points = [
+            this.earTop,
+            this.bridgePoint,
+            this.nosePoint,
+            this.chinPoint,
+            this.throatPoint,
+            this.earBottom,
+            this.tabBottom,
+            this.tabTop,
+            this.earTop
+        ];
         let values = [];
         points.forEach(element => values.push(element.x, element.y));
         return values;
     }
 
+    /**
+     * Get a list of points that need labels.
+     */
     getLabelPoints() {
         return [
             this.earTop,
@@ -172,11 +186,7 @@ export class MaskPattern extends React.Component {
 
     render() {
         this.setDimensions(this.props);
-        const points = this.makePoints()
-        const polylinePoints = this.makePolylinePoints(points);
 
-        const tabPoints = this.makeTabPoints();
-        const tabPolylinePoints = this.makePolylinePoints(tabPoints);
         return (
             <>
                 <Col>
@@ -195,14 +205,22 @@ export class MaskPattern extends React.Component {
                                 y='-52'
                                 fontSize='4px'
                                 fontFamily='sans-serif'>
-                                    {this.props.patternName}
+                                {this.props.patternName}
                             </text>
 
                             <g transform='translate(0, 0)'>
-                                <PatternPolyline points={polylinePoints}>
+                                <PatternPolyline points={this.getOutlinePoints()}>
                                 </PatternPolyline>
-                                <PatternPolyline points={tabPolylinePoints}>
-                                </PatternPolyline>
+                                <line
+                                    x1={this.earTop.x}
+                                    y1={this.earTop.y}
+                                    x2={this.earBottom.x}
+                                    y2={this.earBottom.y}
+                                    strokeDasharray='4'
+                                    stroke='black'
+                                    strokeWidth='.5px'
+                                >
+                                </line>
                                 {this.showLabels &&
                                     <VertexLabels points={this.getLabelPoints()}></VertexLabels>}
                             </g>
