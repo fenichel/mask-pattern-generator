@@ -8,6 +8,7 @@ import { VertexLabels } from './VertexLabels';
 import { cloneSvg } from './exportSvg';
 import { degreeToRadian, getX, getY, getAngleA } from './trig';
 import { PatternPolyline } from './PatternPolyline';
+import { CutOnFold, ArrowDef } from './CutOnFold';
 
 export class MaskPattern extends React.Component {
     constructor(props) {
@@ -128,29 +129,6 @@ export class MaskPattern extends React.Component {
         this.setTabPoints()
     }
 
-    makePoints() {
-        let points = [
-            this.earTop,
-            this.bridgePoint,
-            this.nosePoint,
-            this.chinPoint,
-            this.throatPoint,
-            this.earBottom,
-            this.earTop
-        ];
-        return points;
-    }
-
-    makeTabPoints() {
-        let points = [
-            this.earTop,
-            this.tabTop,
-            this.tabBottom,
-            this.earBottom
-        ]
-        return points;
-    }
-
     getOutlinePoints() {
         let points = [
             this.earTop,
@@ -199,6 +177,8 @@ export class MaskPattern extends React.Component {
                             height='300mm'
                             viewBox='-50 -55 250 245'
                             id='maskPattern'>
+                                <defs><ArrowDef></ArrowDef></defs>
+
                             <Ruler></Ruler>
                             <text
                                 x='-15'
@@ -221,6 +201,11 @@ export class MaskPattern extends React.Component {
                                     strokeWidth='.5px'
                                 >
                                 </line>
+                                <CutOnFold
+                                nose={this.nosePoint}
+                                chin={this.chinPoint}
+                                angle={this.noseChinAngle}>
+                                </CutOnFold>
                                 {this.showLabels &&
                                     <VertexLabels points={this.getLabelPoints()}></VertexLabels>}
                             </g>
