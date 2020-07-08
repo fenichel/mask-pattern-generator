@@ -45,7 +45,7 @@ class MyForm extends React.Component {
                                     src={face_points_lines_labels2}
                                     width={500}
                                     height={500}
-                                    fluid="lg"></Image>
+                                    fluid="lg" />
                             </Col>
                             <Col>
                                 <NameInput
@@ -117,7 +117,7 @@ class MyForm extends React.Component {
                     </MaskPattern>
                 </Row>
             </>
-        )
+        );
     }
-};
+}
 export default MyForm;
