@@ -18,11 +18,11 @@ export class SelectorInput extends React.Component {
     render() {
         return (
             <Form.Group as={Row}>
-                <Col>
+                <Col md='5'>
                     <Form.Label
                     className='labelText'>
                         {this.props.label}</Form.Label></Col>
-                <Col>
+                <Col md='6'>
                     <Form.Control
                         as="select"
                         onChange={this.handleChange}

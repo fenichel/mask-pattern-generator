@@ -7,7 +7,7 @@ import { MaskPattern } from './makePattern';
 import face_points_lines_labels2 from './face_points_lines_labels2.jpg';
 import Image from 'react-bootstrap/Image';
 import { NameInput } from './NameInput';
-import { UnitSelector } from "./UnitSelector";
+import {SelectorInput} from "./SelectorInput";
 
 const DEFAULT_MEASURES_IN_MM = {
     noseToChin: 95,
@@ -90,11 +90,16 @@ class MyForm extends React.Component {
                                         </NameInput>
                                     </Col>
                                     <Col>
-                                        <UnitSelector
+                                        <SelectorInput
                                             id="unit"
                                             label="Units"
-                                            val={this.state.unit}
-                                            onValueChange={this.handleInputChange}></UnitSelector>
+                                            options={[
+                                                ["mm", "mm"],
+                                                ["cm", "cm"],
+                                                ["inches", "in"]
+                                            ]}
+                                            onValueChange={this.handleInputChange}
+                                            />
                                     </Col>
                                 </Row>
                                 <Row>
