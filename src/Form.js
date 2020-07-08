@@ -105,47 +105,54 @@ class MyForm extends React.Component {
                                     <DimensionInput
                                         id="earToBridge"
                                         label="Ear top to nose bridge (A to B)"
+                                        unit={this.state.unit}
                                         val={this.state.earToBridge}
-                                        onValueChange={this.handleInputChange}>
-                                    </DimensionInput>
+                                        onValueChange={this.handleInputChange}
+                                    />
                                     <DimensionInput
                                         id="earToNose"
                                         label="Ear top to nose tip (A to C)"
+                                        unit={this.state.unit}
                                         val={this.state.earToNose}
-                                        onValueChange={this.handleInputChange}>
-                                    </DimensionInput>
+                                        onValueChange={this.handleInputChange}
+                                    />
                                     <DimensionInput
                                         id="bridgeToTip"
                                         label="Nose bridge to nose tip (B to C)"
+                                        unit={this.state.unit}
                                         val={this.state.bridgeToTip}
-                                        onValueChange={this.handleInputChange}>
-                                    </DimensionInput>
+                                        onValueChange={this.handleInputChange}
+                                    />
                                 </Col>
                                 <Col>
                                     <DimensionInput
                                         id="noseToChin"
                                         label="Nose to chin with mouth open to talk (C to D)"
+                                        unit={this.state.unit}
                                         val={this.state.noseToChin}
-                                        onValueChange={this.handleInputChange}>
-                                    </DimensionInput>
+                                        onValueChange={this.handleInputChange}
+                                    />
                                     <DimensionInput
                                         id="chinToThroat"
                                         label="Chin to throat (D to E)"
+                                        unit={this.state.unit}
                                         val={this.state.chinToThroat}
-                                        onValueChange={this.handleInputChange}>
-                                    </DimensionInput>
+                                        onValueChange={this.handleInputChange}
+                                    />
                                     <DimensionInput
                                         id="earToThroat"
                                         label="Throat to ear bottom (E to F)"
+                                        unit={this.state.unit}
                                         val={this.state.earToThroat}
-                                        onValueChange={this.handleInputChange}>
-                                    </DimensionInput>
+                                        onValueChange={this.handleInputChange}
+                                    />
                                     <DimensionInput
                                         id="earHeight"
                                         label="Ear height (A to F)"
+                                        unit={this.state.unit}
                                         val={this.state.earHeight}
-                                        onValueChange={this.handleInputChange}>
-                                    </DimensionInput>
+                                        onValueChange={this.handleInputChange}
+                                    />
                                 </Col>
                             </Row>
                         </Col>

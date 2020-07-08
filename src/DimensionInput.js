@@ -32,7 +32,7 @@ export class DimensionInput extends React.Component {
                         >
                         </Form.Control>
                         <InputGroup.Append>
-                            <InputGroup.Text>mm</InputGroup.Text>
+                            <InputGroup.Text>{this.props.unit}</InputGroup.Text>
                         </InputGroup.Append>
                     </InputGroup>
                 </Col>
