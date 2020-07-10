@@ -69,14 +69,14 @@ export class MaskPattern extends React.Component {
 
     setChinPoint() {
         this.chinPoint = {
-            x: this.nosePoint.x - getX(this.noseChinAngle, this.nosePoint.x),
-            y: this.nosePoint.y + getY(this.noseChinAngle, this.props.noseToChin),
+            x: this.nosePoint.x - getX(this.noseChinAngle, this.props.noseToChin + 12),
+            y: this.nosePoint.y + getY(this.noseChinAngle, this.props.noseToChin + 12),
             label: "Point of chin"
         }
     }
 
     setThroatPoint() {
-        const earBottomToChinX = this.chinPoint.x - this.earBottom.x;
+        const earBottomToChinX = this.chinPoint.x - this.earBottom.x ;
         const earBottomToChinY = this.chinPoint.y - this.earBottom.y;
         const earBottomToChinDistance =
             Math.sqrt(
@@ -96,9 +96,12 @@ export class MaskPattern extends React.Component {
 
         const totalAngle = upperAngle + lowerAngle;
 
-        const x = this.earBottom.x + getX(totalAngle, this.props.earToThroat);
-        const y = this.earBottom.y + getY(totalAngle, this.props.earToThroat);
+        //const x = this.earBottom.x + getX(totalAngle, this.props.earToThroat);
+        //const y = this.earBottom.y + getY(totalAngle, this.props.earToThroat);
 
+        // Hack to force the chin angle to 10 and the chin to throat length to about an inch.
+        const x = this.chinPoint.x - getX(degreeToRadian(10), 25);
+        const y = this.chinPoint.y + getY(degreeToRadian(10), 25);
         this.throatPoint = {
             x: x,
             y: y,
