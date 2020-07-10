@@ -42,3 +42,8 @@ margin: 10px;
 .feedbackText {
   font-style: italic;
 }
+
+.instructionalImage {
+  max-height: 350px;
+  margin: 2px
+}

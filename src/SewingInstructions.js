@@ -1,4 +1,5 @@
 import React from 'react';
+import { SewingImage } from './images/sewingImages.js';
 
 export class SewingInstructions extends React.Component {
     render() {
@@ -26,62 +27,106 @@ export class SewingInstructions extends React.Component {
                 <p>
                     Fold your fabric in half and place the tip-of-nose to point-of-chin line on the fold.
                 </p>
+                <SewingImage imgName={'1'} />
                 <p>
-                    Cut two pieces on fold. (Optionally, cut one piece from a liner fabric for the inside, and one pieces from a showy fabric for the outside).
+                    Cut two pieces on fold. In these images I am using a green fabric (marked 'A') for the liner and a blue fabric (marked 'B') for the outside.
                 </p>
+                <SewingImage imgName={'5'} />
                 <p>
                     Fold each piece along the tip-of-nose to point-of-chin line, right sides together.
                 </p>
+                <SewingImage imgName={'6'} />
                 <p>
                     On each piece, sew from the bridge of the nose to the tip of the nose and fron the point of the chin to the throat, using a 1/4" (6mm) seam allowance.
                 </p>
+                <SewingImage imgName={'8'} />
                 <p>
-                On each piece, clip the corners at the tip of nose and point of chin, then press the seams open.
+                    In these images I'm using a white thread top thread and a red bottom thread for clarity. Normally I would use a thread that matches or contrasts with the outside fabric.
                 </p>
+                <SewingImage imgName={'9'} />
+                <p>
+                    On each piece, clip the corners at the tip of nose and point of chin. Clipping makes it easier to press the seams in the next step.
+                </p>
+                <SewingImage imgName={'10'} />
+                <p>
+                    Press the seams open. Pressing the seams now reduces bulk for later, when you will need to sew over these seams, and makes it less likely that your machine will catch.
+                </p>
+                <SewingImage imgName={'11'} />
+                <p>
+                    Flip one piece (it doesn't matter which) so that the seams are inside, and press.
+                </p>
+                <SewingImage imgName={'12'} />
                 <p>
                     Place the two pieces against each other, right sides touching.
                 </p>
+                <SewingImage imgName={'14'} />
                 <p>
                     Sew the top and bottom edges with a 1/4" (6mm) seam allowance.
                 </p>
+                <SewingImage imgName={'15'} />
                 <p>
-                    Flip the mask inside out and press.
+                    Note that the pressed seam was easy to sew over here.
                 </p>
+                <SewingImage imgName={'16'} />
                 <p>
-                    Edgestitch along the top and bottom edges.
+                    Flip the mask inside out.
                 </p>
+                <SewingImage imgName={'17'} />
+                <p>
+                    Press.
+                </p>
+                <SewingImage imgName={'18'} />
+                <p>
+                    Topstitch along the top and bottom edges. (Note: I swapped the order and did the nose bridge before the topstitching in these images.)
+                </p>
+                <SewingImage imgName={'22'} />
                 <h2>
                     Add a nose bridge
                 </h2>
                 <p>
                     Cut out an 8cm piece of ribbon or bias tape. It should be about 1 cm wide and 8cm long, but the exact dimensions are not important.
                 </p>
+                <SewingImage imgName={'19'} />
                 <p>
                     Center your ribbon or tape at the center point of the mask on the top edge, on the inside of the mask.
                 </p>
+                <SewingImage imgName={'20'} />
                 <p>
                     Sew your ribbon or tape in place along the long top and bottom edges, leaving the left and right edges open.
                 </p>
-                <p>
-                    Insert a piece of wire (e.g. a paperclip) into the ribbon.
-                </p>
-                <p>
-                    Hold the mask up to your face and pinch the wire against the bridge of your nose to form it to the shape of your nose.
-                </p>
+                <SewingImage imgName={'21'} />
                 <h2>
                     Form the tunnels that will hold the straps
                 </h2>
                 <p>
                     On the left side of the mask, fold in 1/4" (6mm) of fabric toward the inside of the mask and press.
                 </p>
+                <SewingImage imgName={'23'} />
                 <p>
                     Fold again, bringing the edge to the line between the ear top and ear bottom, and press.
                 </p>
+                <SewingImage imgName={'24'} />
                 <p>
                     Sew the flap in place, creating a tunnel for the strap.
                 </p>
+                <SewingImage imgName={'25'} />
                 <p>
                     Repeat for the right side.
+                </p>
+
+                <SewingImage imgName={'26'} />
+
+                <h2>
+                    Form the nose bridge
+                </h2>
+                <p>
+                    Insert a piece of wire (e.g. a paperclip) into the ribbon.
+                </p>
+                <SewingImage imgName={'27'} />
+
+                <SewingImage imgName={'28'} />
+                <p>
+                    Hold the mask up to your face and pinch the wire against the bridge of your nose to form it to the shape of your nose.
                 </p>
                 <h2>
                     Add straps
