@@ -5,7 +5,7 @@ export class SewingInstructions extends React.Component {
     render() {
         return (
             <>
-                <p>Images will be here soon! Until then, here are text-only instructions. All seams use a 1/4" (6mm) seam allowance.</p>
+                <p>All seams use a 1/4" (6mm) seam allowance.</p>
                 <p>
                     Measure your face and use the Create Pattern tab to create and download your pattern.
                 </p>
