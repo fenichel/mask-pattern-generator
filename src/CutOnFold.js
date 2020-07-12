@@ -1,5 +1,5 @@
 import React from 'react';
-import { getX, getY, degreeToRadian } from './trig';
+import { getX, getY } from './trig';
 
 export class ArrowDef extends React.Component {
     render() {
@@ -68,7 +68,7 @@ export class CutOnFold extends React.Component {
                 <path d={this.textPath}
                     stroke='none' id='onFoldPath'></path>
                 <text fontSize='4px'>
-                    <textPath href='#onFoldPath' side='right' startOffset='10%'>Cut on fold</textPath>
+                    <textPath href='#onFoldPath' side='right' startOffset='10%'>Place on fold</textPath>
                 </text>
             </>)
     }

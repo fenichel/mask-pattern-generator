@@ -11,11 +11,12 @@ export class TheMath extends React.Component {
                 <p>I made a few starting assumptions:</p>
                 <ul>
                     <li>The angle from the top of the ear to the point of the nose is five degrees up.</li>
-                    <li>The angle from the point of the chin is five degrees toward the ear. </li>
+                    <li>The angle from the point of the nose to the chin is five degrees toward the ear. </li>
                     <li>Measurements are generally too large for a snug fit, so I don't need to add extra seam allowance.</li>
-                    <li>The exception is the chin-to-throat measurement, which will generally be too large. I subtracted 10mm (1cm) from this measurement.</li>
-                    <li>Users can measure in mm. Adding other units is a stretch goal.</li>
+                    <li>The exception is the nose-to-chin measurement, which I expect to be fairly accurate. I added 12mm to the user value to have seam allowance on both ends.</li>
                     <li>The tab size (for attaching the straps) is fixed at 25mm wide.</li>
+                    <li>The angle from the chin to the point on the throat is fixed at 100 degrees.</li>
+                    <li>The chin to throat length is 25mm (about an inch) plus 6mm of seam allowance. Thie is enough to hook back under the throat while talking, without pressing into the throat.</li>
                 </ul>
                 <p>I'm trying to map from a few critical measurements to a flat pattern, but that flat pattern has to take into account the curvature of the human face.</p>
                 <p>I'm accomplishing that by mirroring on the line from the nose to the chin, and essentially applying darts above the nose and below the chin.</p>

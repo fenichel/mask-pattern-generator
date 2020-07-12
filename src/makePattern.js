@@ -9,6 +9,7 @@ import { cloneSvg } from './exportSvg';
 import { degreeToRadian, getX, getY, getAngleA } from './trig';
 import { PatternPolyline } from './PatternPolyline';
 import { CutOnFold, ArrowDef } from './CutOnFold';
+import { PatternInfo } from './PatternInfo';
 
 export class MaskPattern extends React.Component {
     constructor(props) {
@@ -76,32 +77,32 @@ export class MaskPattern extends React.Component {
     }
 
     setThroatPoint() {
-        const earBottomToChinX = this.chinPoint.x - this.earBottom.x ;
-        const earBottomToChinY = this.chinPoint.y - this.earBottom.y;
-        const earBottomToChinDistance =
-            Math.sqrt(
-                earBottomToChinX * earBottomToChinX +
-                earBottomToChinY * earBottomToChinY);
+        // const earBottomToChinX = this.chinPoint.x - this.earBottom.x ;
+        // const earBottomToChinY = this.chinPoint.y - this.earBottom.y;
+        // const earBottomToChinDistance =
+        //     Math.sqrt(
+        //         earBottomToChinX * earBottomToChinX +
+        //         earBottomToChinY * earBottomToChinY);
 
-        const adjustedChinToThroat = this.props.chinToThroat + this.chinToThroatOffset;
-        const lowerAngle = getAngleA(
-            adjustedChinToThroat,
-            earBottomToChinDistance,
-            this.props.earToThroat);
+        // const adjustedChinToThroat = this.props.chinToThroat + this.chinToThroatOffset;
+        // const lowerAngle = getAngleA(
+        //     adjustedChinToThroat,
+        //     earBottomToChinDistance,
+        //     this.props.earToThroat);
 
-        const upperAngle = getAngleA(
-            earBottomToChinY,
-            earBottomToChinX,
-            earBottomToChinDistance);
+        // const upperAngle = getAngleA(
+        //     earBottomToChinY,
+        //     earBottomToChinX,
+        //     earBottomToChinDistance);
 
-        const totalAngle = upperAngle + lowerAngle;
+        // const totalAngle = upperAngle + lowerAngle;
 
         //const x = this.earBottom.x + getX(totalAngle, this.props.earToThroat);
         //const y = this.earBottom.y + getY(totalAngle, this.props.earToThroat);
 
-        // Hack to force the chin angle to 10 and the chin to throat length to about an inch.
-        const x = this.chinPoint.x - getX(degreeToRadian(10), 25);
-        const y = this.chinPoint.y + getY(degreeToRadian(10), 25);
+        // Hack to force the chin angle to 10 down and the chin to throat length to about an inch (plus 6mm seam allowance).
+        const x = this.chinPoint.x - getX(degreeToRadian(10), 31);
+        const y = this.chinPoint.y + getY(degreeToRadian(10), 31);
         this.throatPoint = {
             x: x,
             y: y,
@@ -180,17 +181,9 @@ export class MaskPattern extends React.Component {
                             height='300mm'
                             viewBox='-50 -55 250 245'
                             id='maskPattern'>
-                                <defs><ArrowDef></ArrowDef></defs>
-
-                            <Ruler></Ruler>
-                            <text
-                                x='-15'
-                                y='-52'
-                                fontSize='4px'
-                                fontFamily='sans-serif'>
-                                {this.props.patternName}
-                            </text>
-
+                            <defs><ArrowDef></ArrowDef></defs>
+                            <Ruler />
+                            <PatternInfo vals={this.props} />
                             <g transform='translate(0, 0)'>
                                 <PatternPolyline points={this.getOutlinePoints()}>
                                 </PatternPolyline>
@@ -205,9 +198,9 @@ export class MaskPattern extends React.Component {
                                 >
                                 </line>
                                 <CutOnFold
-                                nose={this.nosePoint}
-                                chin={this.chinPoint}
-                                angle={this.noseChinAngle}>
+                                    nose={this.nosePoint}
+                                    chin={this.chinPoint}
+                                    angle={this.noseChinAngle}>
                                 </CutOnFold>
                                 {this.showLabels &&
                                     <VertexLabels points={this.getLabelPoints()}></VertexLabels>}

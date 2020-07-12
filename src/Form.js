@@ -152,7 +152,7 @@ class MyForm extends React.Component {
                                         val={this.state.noseToChin}
                                         onValueChange={this.handleInputChange}
                                     />
-                                    <DimensionInput
+                                    {/* <DimensionInput
                                         id="chinToThroat"
                                         label="Chin to throat (D to E)"
                                         unit={this.state.unit}
@@ -165,7 +165,7 @@ class MyForm extends React.Component {
                                         unit={this.state.unit}
                                         val={this.state.earToThroat}
                                         onValueChange={this.handleInputChange}
-                                    />
+                                    /> */}
                                     <DimensionInput
                                         id="earHeight"
                                         label="Ear height (A to F)"
