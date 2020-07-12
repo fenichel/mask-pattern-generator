@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "286237024d81b556bdf35e9a23d0606f",
+    "revision": "263b1ee236b2659c89facfad38070628",
     "url": "/mask-pattern-generator/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/mask-pattern-generator/static/css/2.af3c1da9.chunk.css"
   },
   {
-    "revision": "2215638bbf1d5ee56e92",
+    "revision": "7755b9bcffcdfb534ca7",
     "url": "/mask-pattern-generator/static/css/main.d1d1689c.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/mask-pattern-generator/static/js/2.0cb13bd0.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "2215638bbf1d5ee56e92",
-    "url": "/mask-pattern-generator/static/js/main.08e5d59c.chunk.js"
+    "revision": "7755b9bcffcdfb534ca7",
+    "url": "/mask-pattern-generator/static/js/main.c02cbdff.chunk.js"
   },
   {
     "revision": "aa79edeb61d59ad695ef",
@@ -160,7 +160,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/mask-pattern-generator/static/media/face_points_lines_labels2.84efa164.jpg"
   },
   {
-    "revision": "79463d1a4e84297825382517b30b8585",
-    "url": "/mask-pattern-generator/static/media/theMath.79463d1a.svg"
+    "revision": "c9b290faeecccf437061f14ad309b052",
+    "url": "/mask-pattern-generator/static/media/theMath.c9b290fa.svg"
   }
 ]);

@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/mask-pattern-generator/static/css/main.d1d1689c.chunk.css",
-    "main.js": "/mask-pattern-generator/static/js/main.08e5d59c.chunk.js",
-    "main.js.map": "/mask-pattern-generator/static/js/main.08e5d59c.chunk.js.map",
+    "main.js": "/mask-pattern-generator/static/js/main.c02cbdff.chunk.js",
+    "main.js.map": "/mask-pattern-generator/static/js/main.c02cbdff.chunk.js.map",
     "runtime-main.js": "/mask-pattern-generator/static/js/runtime-main.3f0d6445.js",
     "runtime-main.js.map": "/mask-pattern-generator/static/js/runtime-main.3f0d6445.js.map",
     "static/css/2.af3c1da9.chunk.css": "/mask-pattern-generator/static/css/2.af3c1da9.chunk.css",
     "static/js/2.0cb13bd0.chunk.js": "/mask-pattern-generator/static/js/2.0cb13bd0.chunk.js",
     "static/js/2.0cb13bd0.chunk.js.map": "/mask-pattern-generator/static/js/2.0cb13bd0.chunk.js.map",
     "index.html": "/mask-pattern-generator/index.html",
-    "precache-manifest.5d51ee771a63664b279f3c6084c01b3d.js": "/mask-pattern-generator/precache-manifest.5d51ee771a63664b279f3c6084c01b3d.js",
+    "precache-manifest.6ad2cb9b29540aed6f7b115b9042073e.js": "/mask-pattern-generator/precache-manifest.6ad2cb9b29540aed6f7b115b9042073e.js",
     "service-worker.js": "/mask-pattern-generator/service-worker.js",
     "static/css/2.af3c1da9.chunk.css.map": "/mask-pattern-generator/static/css/2.af3c1da9.chunk.css.map",
     "static/css/main.d1d1689c.chunk.css.map": "/mask-pattern-generator/static/css/main.d1d1689c.chunk.css.map",
@@ -47,13 +47,13 @@
     "static/media/face_points_labels_2.jpg": "/mask-pattern-generator/static/media/face_points_labels_2.e8c859cd.jpg",
     "static/media/face_points_lines2.jpg": "/mask-pattern-generator/static/media/face_points_lines2.6b16100e.jpg",
     "static/media/face_points_lines_labels2.jpg": "/mask-pattern-generator/static/media/face_points_lines_labels2.84efa164.jpg",
-    "static/media/theMath.svg": "/mask-pattern-generator/static/media/theMath.79463d1a.svg"
+    "static/media/theMath.svg": "/mask-pattern-generator/static/media/theMath.c9b290fa.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.3f0d6445.js",
     "static/css/2.af3c1da9.chunk.css",
     "static/js/2.0cb13bd0.chunk.js",
     "static/css/main.d1d1689c.chunk.css",
-    "static/js/main.08e5d59c.chunk.js"
+    "static/js/main.c02cbdff.chunk.js"
   ]
 }
