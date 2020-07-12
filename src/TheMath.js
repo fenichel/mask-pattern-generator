@@ -47,10 +47,8 @@ export class TheMath extends React.Component {
                           <MathJax.Node inline formula={'Cy = sin(5^\\circ) \\cdot AC'}/>
                         </li>
                     </ul>
-
                     <li>The rest of the coordinates can be found by similar applications of the law of cosines and SOHCAHTOA, and are left as an exercise for the reader.</li>
-
-                </ul>Found a bug in my math? Think my math checks out but my assumptions are wrong? File an issue or make a pull request against <a href="https://github.com/fenichel/mask-pattern-generator/issues">my GitHub repo</a>.
+                </ul>
             </MathJax.Provider>
         );
     }
