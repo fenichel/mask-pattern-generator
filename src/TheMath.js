@@ -1,13 +1,14 @@
 import React from 'react';
 
 import Image from 'react-bootstrap/Image'
+import MathJax from 'react-mathjax'
 import theMath from './theMath.svg';
 
 
 export class TheMath extends React.Component {
     render() {
         return (
-            <>
+            <MathJax.Provider>
                 <p>I made a few starting assumptions:</p>
                 <ul>
                     <li>The angle from the top of the ear to the point of the nose is five degrees up.</li>
@@ -28,25 +29,29 @@ export class TheMath extends React.Component {
                     <li>Point B is the bridge of the nose. We know AB, AC, and BC, so we can find the angle θ1:</li>
                     <ul>
                         <li>
-                            The law of cosines says c*c = a*a + b*b − 2 * a * b * cos(C)
+                            The law of cosines says <MathJax.Node inline formula={'c^2 = a^2 + b^2 − 2ab\\, cos(C)'}/>
                         </li>
                         <li>
-                            θ1 = arccos((b*b + c*c - a*a) / (2 * b * c))
+                            <MathJax.Node inline formula={'θ1 = arccos((b^2 + c^2 - a^2) / 2bc)'}/>
                         </li>
                         <li>
-                            In this case, a = BC, b = AB, and c = AC
+                            In this case,<MathJax.Node inline formula={'a = BC'}/>, <MathJax.Node inline formula={'b = AB'}/>, and <MathJax.Node inline formula={'c = AC'}/>
                         </li>
                     </ul>
                     <li>I assumed a five degree angle up from the top of the ear to the nose. We know the distance from A to C, so:</li>
                     <ul>
-                        <li>Cx = cos(5) * AC</li>
-                        <li>Cy = sin(5) * AC</li>
+                        <li>
+                          <MathJax.Node inline formula={'Cx = cos(5^\\circ) \\cdot AC'}/>
+                        </li>
+                        <li>
+                          <MathJax.Node inline formula={'Cy = sin(5^\\circ) \\cdot AC'}/>
+                        </li>
                     </ul>
 
                     <li>The rest of the coordinates can be found by similar applications of the law of cosines and SOHCAHTOA, and are left as an exercise for the reader.</li>
-                    
+
                 </ul>Found a bug in my math? Think my math checks out but my assumptions are wrong? File an issue or make a pull request against <a href="https://github.com/fenichel/mask-pattern-generator/issues">my GitHub repo</a>.
-            </>
+            </MathJax.Provider>
         );
     }
 }
