@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/mask-pattern-generator/static/css/main.d1d1689c.chunk.css",
-    "main.js": "/mask-pattern-generator/static/js/main.71413560.chunk.js",
-    "main.js.map": "/mask-pattern-generator/static/js/main.71413560.chunk.js.map",
+    "main.css": "/mask-pattern-generator/static/css/main.fe3137f3.chunk.css",
+    "main.js": "/mask-pattern-generator/static/js/main.7ec0371e.chunk.js",
+    "main.js.map": "/mask-pattern-generator/static/js/main.7ec0371e.chunk.js.map",
     "runtime-main.js": "/mask-pattern-generator/static/js/runtime-main.3f0d6445.js",
     "runtime-main.js.map": "/mask-pattern-generator/static/js/runtime-main.3f0d6445.js.map",
     "static/css/2.af3c1da9.chunk.css": "/mask-pattern-generator/static/css/2.af3c1da9.chunk.css",
-    "static/js/2.8f2a4c31.chunk.js": "/mask-pattern-generator/static/js/2.8f2a4c31.chunk.js",
-    "static/js/2.8f2a4c31.chunk.js.map": "/mask-pattern-generator/static/js/2.8f2a4c31.chunk.js.map",
+    "static/js/2.9249d215.chunk.js": "/mask-pattern-generator/static/js/2.9249d215.chunk.js",
+    "static/js/2.9249d215.chunk.js.map": "/mask-pattern-generator/static/js/2.9249d215.chunk.js.map",
     "index.html": "/mask-pattern-generator/index.html",
-    "precache-manifest.3149cb9ce044340934460dd4ed8fa0c9.js": "/mask-pattern-generator/precache-manifest.3149cb9ce044340934460dd4ed8fa0c9.js",
+    "precache-manifest.ef7793ee0553895095b73ca2f5d4f909.js": "/mask-pattern-generator/precache-manifest.ef7793ee0553895095b73ca2f5d4f909.js",
     "service-worker.js": "/mask-pattern-generator/service-worker.js",
     "static/css/2.af3c1da9.chunk.css.map": "/mask-pattern-generator/static/css/2.af3c1da9.chunk.css.map",
-    "static/css/main.d1d1689c.chunk.css.map": "/mask-pattern-generator/static/css/main.d1d1689c.chunk.css.map",
-    "static/js/2.8f2a4c31.chunk.js.LICENSE.txt": "/mask-pattern-generator/static/js/2.8f2a4c31.chunk.js.LICENSE.txt",
+    "static/css/main.fe3137f3.chunk.css.map": "/mask-pattern-generator/static/css/main.fe3137f3.chunk.css.map",
+    "static/js/2.9249d215.chunk.js.LICENSE.txt": "/mask-pattern-generator/static/js/2.9249d215.chunk.js.LICENSE.txt",
     "static/media/1.jpg": "/mask-pattern-generator/static/media/1.593a9788.jpg",
     "static/media/10.jpg": "/mask-pattern-generator/static/media/10.15e2d2c5.jpg",
     "static/media/11.jpg": "/mask-pattern-generator/static/media/11.caa69878.jpg",
@@ -52,8 +52,8 @@
   "entrypoints": [
     "static/js/runtime-main.3f0d6445.js",
     "static/css/2.af3c1da9.chunk.css",
-    "static/js/2.8f2a4c31.chunk.js",
-    "static/css/main.d1d1689c.chunk.css",
-    "static/js/main.71413560.chunk.js"
+    "static/js/2.9249d215.chunk.js",
+    "static/css/main.fe3137f3.chunk.css",
+    "static/js/main.7ec0371e.chunk.js"
   ]
 }
