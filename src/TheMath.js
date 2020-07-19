@@ -18,6 +18,7 @@ export class TheMath extends React.Component {
                     <li>The tab size (for attaching the straps) is fixed at 25mm wide.</li>
                     <li>The angle from the chin to the point on the throat is fixed at 100 degrees.</li>
                     <li>The chin to throat length is 25mm (about an inch) plus 6mm of seam allowance. Thie is enough to hook back under the throat while talking, without pressing into the throat.</li>
+                    <li>I can approximate curves with straight lines to round the nose and chin.</li>
                 </ul>
                 <p>I'm trying to map from a few critical measurements to a flat pattern, but that flat pattern has to take into account the curvature of the human face.</p>
                 <p>I'm accomplishing that by mirroring on the line from the nose to the chin, and essentially applying darts above the nose and below the chin.</p>

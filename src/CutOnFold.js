@@ -15,7 +15,7 @@ export class ArrowDef extends React.Component {
 }
 export class CutOnFold extends React.Component {
     makeCoordinates() {
-        const endPointOffset = 7;
+        const endPointOffset = 10;
         const cornerOffset = 15;
 
         const alongLineX = getX(this.props.angle, endPointOffset);

@@ -32,10 +32,10 @@ export class MeasurementInstructions extends React.Component {
                         itemName='D'
                         description='The point of your chin'>
                     </ItemDescription>
-                    <ItemDescription
+                    {/* <ItemDescription
                         itemName='E'
                         description='The top of your throat. The mask will hook under your chin and back to this point, to keep it snug when you are talking'>
-                    </ItemDescription>
+                    </ItemDescription> */}
                     <ItemDescription
                         itemName='F'
                         description='The bottom of your ear, just above the end of your jawbone'>
@@ -70,14 +70,14 @@ export class MeasurementInstructions extends React.Component {
                         itemName='C to D'
                         description='The point of your nose to the tip of your chin. Measure this with your mouth open, as though you were talking.'>
                     </ItemDescription>
-                    <ItemDescription
+                    {/* <ItemDescription
                         itemName='D to E'
                         description='The point of your chin to the front of your throat. The mask will hook under your chin back to this point, to keep it snug when you are talking.'>
                     </ItemDescription>
                     <ItemDescription
                         itemName='E to F'
                         description='The front of your throat to the bottom of your ear.'>
-                    </ItemDescription>
+                    </ItemDescription> */}
                     <ItemDescription
                         itemName='A to F'
                         description='The top of your ear to the bottom of your ear.'>

@@ -13,17 +13,17 @@ export class VertexLabels extends React.Component {
                         >
 
                     </circle>
-                    <text
+                    {/* <text
                         x={point.x + 5}
                         y={point.y}
                         fontSize='4px'
                         fontFamily='sans-serif'
                     >
                         {point.label}
-                    </text>
+                    </text> */}
                     <text
-                        x={point.x + 5}
-                        y={point.y + 5}
+                        x={point.x + 2}
+                        y={point.y + 2}
                         fontSize='4px'
                         fontFamily='sans-serif'
                     >

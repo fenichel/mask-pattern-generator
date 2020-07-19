@@ -4,6 +4,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Container from "react-bootstrap/Container";
 import { DimensionInput } from './DimensionInput';
+import { CheckboxInput } from './CheckboxInput';
 import { MaskPattern } from './makePattern';
 import face_points_lines_labels2 from './face_points_lines_labels2.jpg';
 import Image from 'react-bootstrap/Image';
@@ -40,7 +41,8 @@ const ToMillimeters = {
 function buildInitialState() {
     const state = {
         unit: 'mm',
-        patternName: PLACEHOLDER_NAME
+        patternName: PLACEHOLDER_NAME,
+        showLabels: false
     };
     Object.keys(DEFAULT_MEASURES_IN_MM).forEach((key) => {
         const mm = DEFAULT_MEASURES_IN_MM[key];
@@ -76,6 +78,11 @@ class MyForm extends React.Component {
         } else if (name === 'patternName') {
             this.setState({
                 'patternName': target.value
+            });
+        } else if (name === 'showLabels') {
+            console.log('show labels: ' + target.value);
+            this.setState( {
+                'showLabels': target.checked
             });
         } else { // measurementChanged
             const measure = parseFloat(target.value)
@@ -173,6 +180,11 @@ class MyForm extends React.Component {
                                         val={this.state.earHeight}
                                         onValueChange={this.handleInputChange}
                                     />
+                                    <CheckboxInput
+                                        id="showLabels"
+                                        label="Show labels"
+                                        onValueChange={this.handleInputChange}
+                                        />
                                 </Col>
                             </Row>
                         </Col>
@@ -188,6 +200,7 @@ class MyForm extends React.Component {
                         bridgeToTip={Math.ceil(this.state.bridgeToTipInMM)}
                         earToBridge={Math.ceil(this.state.earToBridgeInMM)}
                         chinToThroat={Math.ceil(this.state.chinToThroatInMM)}
+                        showLabels={this.state.showLabels}
                     />
                 </Container>
             </>

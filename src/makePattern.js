@@ -20,13 +20,11 @@ export class MaskPattern extends React.Component {
         this.noseChinAngle = degreeToRadian(85);
         // The width of the tab for the strap, in mm
         this.tabWidth = 25;
-        // The offset I apply to the measured chin to throat length, in mm.
-        this.chinToThroatOffset = -10;
-        // Whether to show labels on the points.
-        this.showLabels = true;
+        this.chinThroatAngle = degreeToRadian(10);
+        this.download = this.download.bind(this);
     }
     download() {
-        fileDownload(cloneSvg(), false, 'maskPattern.svg');
+        fileDownload(cloneSvg(), false, this.props.patternName + '.svg');
     }
 
     setEarTop() {
@@ -68,6 +66,40 @@ export class MaskPattern extends React.Component {
         }
     }
 
+    roundChin() {
+        const roundingDistance = 7;
+        this.aboveChin = {
+            x: this.chinPoint.x + getX(this.noseChinAngle, roundingDistance),
+            y: this.chinPoint.y - getY(this.noseChinAngle, roundingDistance),
+            label: "c"
+        }
+        this.belowChin = {
+            x: this.chinPoint.x - getX(this.chinThroatAngle, roundingDistance),
+            y: this.chinPoint.y + getY(this.chinThroatAngle, roundingDistance),
+            label: "d"
+        }
+    }
+
+    roundNose() {        
+        const roundingDistance = 5;
+
+        // tan(angle) = opposite over adjacent
+        const opposite = this.nosePoint.y - this.bridgePoint.y;
+        const adjacent = this.nosePoint.x - this.bridgePoint.x;
+        const bridgeNoseAngle = Math.atan(opposite / adjacent);
+
+        this.aboveNose = {
+            x: this.nosePoint.x - getX(bridgeNoseAngle, roundingDistance),
+            y: this.nosePoint.y - getY(bridgeNoseAngle, roundingDistance),
+            label: "a"
+        }
+        this.belowNose = {
+            x: this.nosePoint.x - getX(this.noseChinAngle, roundingDistance),
+            y: this.nosePoint.y + getY(this.noseChinAngle, roundingDistance),
+            label: "b"
+        }
+    }
+
     setChinPoint() {
         this.chinPoint = {
             x: this.nosePoint.x - getX(this.noseChinAngle, this.props.noseToChin + 12),
@@ -77,32 +109,9 @@ export class MaskPattern extends React.Component {
     }
 
     setThroatPoint() {
-        // const earBottomToChinX = this.chinPoint.x - this.earBottom.x ;
-        // const earBottomToChinY = this.chinPoint.y - this.earBottom.y;
-        // const earBottomToChinDistance =
-        //     Math.sqrt(
-        //         earBottomToChinX * earBottomToChinX +
-        //         earBottomToChinY * earBottomToChinY);
-
-        // const adjustedChinToThroat = this.props.chinToThroat + this.chinToThroatOffset;
-        // const lowerAngle = getAngleA(
-        //     adjustedChinToThroat,
-        //     earBottomToChinDistance,
-        //     this.props.earToThroat);
-
-        // const upperAngle = getAngleA(
-        //     earBottomToChinY,
-        //     earBottomToChinX,
-        //     earBottomToChinDistance);
-
-        // const totalAngle = upperAngle + lowerAngle;
-
-        //const x = this.earBottom.x + getX(totalAngle, this.props.earToThroat);
-        //const y = this.earBottom.y + getY(totalAngle, this.props.earToThroat);
-
         // Hack to force the chin angle to 10 down and the chin to throat length to about an inch (plus 6mm seam allowance).
-        const x = this.chinPoint.x - getX(degreeToRadian(10), 31);
-        const y = this.chinPoint.y + getY(degreeToRadian(10), 31);
+        const x = this.chinPoint.x - getX(this.chinThroatAngle, 31);
+        const y = this.chinPoint.y + getY(this.chinThroatAngle, 31);
         this.throatPoint = {
             x: x,
             y: y,
@@ -131,14 +140,19 @@ export class MaskPattern extends React.Component {
         this.setChinPoint();
         this.setThroatPoint();
         this.setTabPoints()
+
+        this.roundChin();
+        this.roundNose();
     }
 
     getOutlinePoints() {
         let points = [
             this.earTop,
             this.bridgePoint,
-            this.nosePoint,
-            this.chinPoint,
+            this.aboveNose,
+            this.belowNose,
+            this.aboveChin,
+            this.belowChin,
             this.throatPoint,
             this.earBottom,
             this.tabBottom,
@@ -160,9 +174,11 @@ export class MaskPattern extends React.Component {
             this.earBottom,
             this.tabBottom,
             this.bridgePoint,
-            this.nosePoint,
-            this.chinPoint,
-            this.throatPoint
+            this.aboveNose,
+            this.belowNose,
+            this.throatPoint,
+            this.aboveChin,
+            this.belowChin
         ]
     }
 
@@ -202,7 +218,7 @@ export class MaskPattern extends React.Component {
                                     chin={this.chinPoint}
                                     angle={this.noseChinAngle}>
                                 </CutOnFold>
-                                {this.showLabels &&
+                                {this.props.showLabels &&
                                     <VertexLabels points={this.getLabelPoints()}></VertexLabels>}
                             </g>
                         </svg>
