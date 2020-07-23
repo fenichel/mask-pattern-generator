@@ -5,7 +5,7 @@ export class SewingInstructions extends React.Component {
     render() {
         return (
             <>
-                <p>All seams use a 1/4" (6mm) seam allowance.</p>
+                <h2>Create your pattern</h2>
                 <p>
                     Measure your face and use the Create Pattern tab to create and download your pattern.
                 </p>
@@ -18,6 +18,12 @@ export class SewingInstructions extends React.Component {
                 <p>
                     If it's the wrong length, adjust your print settings until the line is the correct length.
                 </p>
+
+                <h2>Cutting and sewing</h2>
+                <p>Follow the instructions in <a href="https://www.youtube.com/watch?v=KBR98YKAr7w&list=WL">this excellent video</a> to make your mask.</p>
+                <p>To cut the lining fabric, cut along the dashed line at the ear.  Cut on the solid line for the main fabric.</p>
+
+{/*                 
                 <h2>
                     Cut your pattern and fabric
                 </h2>
@@ -160,7 +166,7 @@ export class SewingInstructions extends React.Component {
                 </p>
                 <p>
                     There are many other ways to set up your straps, including a single strap that runs through the tunnels and is adjusted with a toggle or by tying it when you put the mask on.
-                </p>
+                </p> */}
             </>);
     }
 }

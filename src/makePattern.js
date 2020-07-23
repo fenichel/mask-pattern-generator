@@ -67,7 +67,7 @@ export class MaskPattern extends React.Component {
     }
 
     roundChin() {
-        const roundingDistance = 7;
+        const roundingDistance = 15;
         this.aboveChin = {
             x: this.chinPoint.x + getX(this.noseChinAngle, roundingDistance),
             y: this.chinPoint.y - getY(this.noseChinAngle, roundingDistance),
@@ -204,20 +204,20 @@ export class MaskPattern extends React.Component {
                                 <PatternPolyline points={this.getOutlinePoints()}>
                                 </PatternPolyline>
                                 <line
-                                    x1={this.earTop.x}
+                                    x1={this.earTop.x - 10}
                                     y1={this.earTop.y}
-                                    x2={this.earBottom.x}
+                                    x2={this.earBottom.x - 10}
                                     y2={this.earBottom.y}
                                     strokeDasharray='4'
                                     stroke='black'
                                     strokeWidth='.5px'
                                 >
                                 </line>
-                                <CutOnFold
+                                {/* <CutOnFold
                                     nose={this.nosePoint}
                                     chin={this.chinPoint}
                                     angle={this.noseChinAngle}>
-                                </CutOnFold>
+                                </CutOnFold> */}
                                 {this.props.showLabels &&
                                     <VertexLabels points={this.getLabelPoints()}></VertexLabels>}
                             </g>

@@ -13,7 +13,7 @@ export class Introduction extends React.Component {
                 <p>My goals for the pattern are:</p>
                 <ul>
                     <li>The mask stays up when you talk.</li>
-                    <li>The mask has minimal bulk in front of your mouth (no seam).</li>
+                    <li>The mask has minimal bulk in front of your mouth.</li>
                     <li>The mask fits snugly, with no gaping at the nose, chin, or ears.</li>
                 </ul>
                 <p>I'm still iterating on the pattern and trying to dial in my math--if it doesn't fit right on you, please let me know and/or come back in a week to try again.</p>
@@ -31,7 +31,7 @@ export class Introduction extends React.Component {
                 </img>
 
 
-                <p>Made by Rachel Fenichel. Last updated July 18 2020.</p>
+                <p>Made by Rachel Fenichel. Last updated July 23 2020.</p>
             </Jumbotron>)
     }
 }
