@@ -31,9 +31,9 @@ function App() {
         <Tab eventKey="sewing" title="Sewing instructions">
           <SewingInstructions />
         </Tab>
-        <Tab eventKey="theMath" title="Show me the math!">
+        {/* <Tab eventKey="theMath" title="Show me the math!">
           <TheMath className='theMath' />
-        </Tab>
+        </Tab> */}
       </Tabs>
     <Feedback />
     </div>

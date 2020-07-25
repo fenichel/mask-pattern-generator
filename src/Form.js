@@ -180,11 +180,11 @@ class MyForm extends React.Component {
                                         val={this.state.earHeight}
                                         onValueChange={this.handleInputChange}
                                     />
-                                    <CheckboxInput
+                                    {/* <CheckboxInput
                                         id="showLabels"
                                         label="Show labels"
                                         onValueChange={this.handleInputChange}
-                                        />
+                                        /> */}
                                 </Col>
                             </Row>
                         </Col>

@@ -160,7 +160,6 @@ export class MaskPattern extends React.Component {
             this.earTop
         ];
          points = [
-            this.bridgePoint,
             this.earTop,
             this.tabTop,
             this.tabBottom,
@@ -190,28 +189,37 @@ export class MaskPattern extends React.Component {
         ]
     }
 
-    getCurvePath() {
+    getFrontCurvePath() {
         const points = [
             this.aboveNose,
             this.nosePoint,
-            //this.belowNose,
-            //{x: this.nosePoint.x + 2, y: this.nosePoint.y + (this.chinPoint.y - this.nosePoint.y) / 4},
             {x: this.nosePoint.x + 10, y: this.nosePoint.y + (this.chinPoint.y - this.nosePoint.y) / 4},
             {x: this.nosePoint.x , y: this.nosePoint.y + 3 * (this.chinPoint.y - this.nosePoint.y) / 4},
-            //this.aboveChin,
-           // this.chinPoint,
             this.belowChin,
-           // {x: this.throatPoint.x + 1, y: this.throatPoint.y + 1},
             this.throatPoint,
             this.throatPoint
         ]
         let pointStr = '';
         points.forEach(point =>  {pointStr += point.x + ' ' + point.y + ' ' });
-        let path = 'm ' + 
-            this.bridgePoint.x + ' ' + this.bridgePoint.y + ' Q ' + pointStr;
-            console.log('path is ' + path);
-            return path;
+        let path = 'm ' + this.bridgePoint.x + ' ' + this.bridgePoint.y + ' Q ' + pointStr;
+        return path;
+    }
 
+    getUpperCurvePath() {
+        let xOffset = (this.bridgePoint.x - this.earTop.x) / 3;
+        let yOffset = (this.bridgePoint.y - this.earTop.y) * .8 ;
+        console.log(yOffset)
+        const points = [
+            {x: this.bridgePoint.x - xOffset, y: this.bridgePoint.y - yOffset},
+            this.bridgePoint,
+            this.bridgePoint
+        ];
+        
+        let pointStr = '';
+        points.forEach(point =>  {pointStr += point.x + ' ' + point.y + ' ' });
+        let path = 'm ' + this.earTop.x + ' ' + this.earTop.y + ' Q ' + pointStr;
+        console.log('path is ' + path);
+        return path;
     }
     render() {
         this.setDimensions(this.props);
@@ -228,7 +236,6 @@ export class MaskPattern extends React.Component {
                             height='300mm'
                             viewBox='-50 -55 250 245'
                             id='maskPattern'>
-                            <defs><ArrowDef></ArrowDef></defs>
                             <Ruler />
                             <PatternInfo vals={this.props} />
                             <g transform='translate(0, 0)'>
@@ -244,16 +251,16 @@ export class MaskPattern extends React.Component {
                                     strokeWidth='.5px'
                                 >
                                 </line>
-                                    <path d={this.getCurvePath()}
+                                <path d={this.getFrontCurvePath()}
                                     fill='none'
                                     stroke='black'
                                     strokeWidth='.5px'
                                 ></path>
-                                {/* <CutOnFold
-                                    nose={this.nosePoint}
-                                    chin={this.chinPoint}
-                                    angle={this.noseChinAngle}>
-                                </CutOnFold> */}
+                                <path d={this.getUpperCurvePath()}
+                                    fill='none'
+                                    stroke='black'
+                                    strokeWidth='.5px'
+                                ></path>
                                 {this.props.showLabels &&
                                     <VertexLabels points={this.getLabelPoints()}></VertexLabels>}
                             </g>
