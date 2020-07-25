@@ -17,7 +17,7 @@ export class MaskPattern extends React.Component {
         this.setDimensions(props);
 
         this.earToNoseRiseAngle = degreeToRadian(5);
-        this.noseChinAngle = degreeToRadian(85);
+        this.noseChinAngle = degreeToRadian(90);
         // The width of the tab for the strap, in mm
         this.tabWidth = 25;
         this.chinThroatAngle = degreeToRadian(10);
@@ -67,7 +67,7 @@ export class MaskPattern extends React.Component {
     }
 
     roundChin() {
-        const roundingDistance = 15;
+        const roundingDistance = 20;
         this.aboveChin = {
             x: this.chinPoint.x + getX(this.noseChinAngle, roundingDistance),
             y: this.chinPoint.y - getY(this.noseChinAngle, roundingDistance),
@@ -159,6 +159,14 @@ export class MaskPattern extends React.Component {
             this.tabTop,
             this.earTop
         ];
+         points = [
+            this.bridgePoint,
+            this.earTop,
+            this.tabTop,
+            this.tabBottom,
+            this.earBottom,
+            this.throatPoint
+        ]
         let values = [];
         points.forEach(element => values.push(element.x, element.y));
         return values;
@@ -182,6 +190,29 @@ export class MaskPattern extends React.Component {
         ]
     }
 
+    getCurvePath() {
+        const points = [
+            this.aboveNose,
+            this.nosePoint,
+            //this.belowNose,
+            //{x: this.nosePoint.x + 2, y: this.nosePoint.y + (this.chinPoint.y - this.nosePoint.y) / 4},
+            {x: this.nosePoint.x + 10, y: this.nosePoint.y + (this.chinPoint.y - this.nosePoint.y) / 4},
+            {x: this.nosePoint.x , y: this.nosePoint.y + 3 * (this.chinPoint.y - this.nosePoint.y) / 4},
+            //this.aboveChin,
+           // this.chinPoint,
+            this.belowChin,
+           // {x: this.throatPoint.x + 1, y: this.throatPoint.y + 1},
+            this.throatPoint,
+            this.throatPoint
+        ]
+        let pointStr = '';
+        points.forEach(point =>  {pointStr += point.x + ' ' + point.y + ' ' });
+        let path = 'm ' + 
+            this.bridgePoint.x + ' ' + this.bridgePoint.y + ' Q ' + pointStr;
+            console.log('path is ' + path);
+            return path;
+
+    }
     render() {
         this.setDimensions(this.props);
 
@@ -201,18 +232,23 @@ export class MaskPattern extends React.Component {
                             <Ruler />
                             <PatternInfo vals={this.props} />
                             <g transform='translate(0, 0)'>
-                                <PatternPolyline points={this.getOutlinePoints()}>
-                                </PatternPolyline>
+                                    <PatternPolyline points={this.getOutlinePoints()}>
+                                    </PatternPolyline>
                                 <line
-                                    x1={this.earTop.x - 10}
+                                    x1={this.earTop.x}
                                     y1={this.earTop.y}
-                                    x2={this.earBottom.x - 10}
+                                    x2={this.earBottom.x}
                                     y2={this.earBottom.y}
                                     strokeDasharray='4'
                                     stroke='black'
                                     strokeWidth='.5px'
                                 >
                                 </line>
+                                    <path d={this.getCurvePath()}
+                                    fill='none'
+                                    stroke='black'
+                                    strokeWidth='.5px'
+                                ></path>
                                 {/* <CutOnFold
                                     nose={this.nosePoint}
                                     chin={this.chinPoint}
