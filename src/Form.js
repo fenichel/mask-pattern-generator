@@ -4,12 +4,11 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Container from "react-bootstrap/Container";
 import { DimensionInput } from './DimensionInput';
-import { CheckboxInput } from './CheckboxInput';
 import { MaskPattern } from './makePattern';
-import face_points_lines_labels2 from './face_points_lines_labels2.jpg';
+import face_points_lines_labels from './face-points-lines-labels.jpg';
 import Image from 'react-bootstrap/Image';
 import { NameInput } from './NameInput';
-import {SelectorInput} from "./SelectorInput";
+import { SelectorInput } from "./SelectorInput";
 
 const DEFAULT_MEASURES_IN_MM = {
     noseToChin: 95,
@@ -28,7 +27,7 @@ const MM_PER_IN = 25.4;
 const FromMillimetersToUserVisible = {
     "mm": mm => Math.round(mm),
     "cm": mm => Math.round(mm) / 10,  // Rounded to 0.1cm
-    "in": mm => Math.round( 100 * mm / MM_PER_IN ) / 100  // Rounded to 0.01in
+    "in": mm => Math.round(100 * mm / MM_PER_IN) / 100  // Rounded to 0.01in
 }
 
 // Converts the measure in the requested unit to millimeters.
@@ -71,7 +70,7 @@ class MyForm extends React.Component {
 
             // Convert existing values to new unit.
             Object.keys(DEFAULT_MEASURES_IN_MM).forEach((key) => {
-                newState[key] = FromMillimetersToUserVisible[unit](this.state[key+"InMM"])
+                newState[key] = FromMillimetersToUserVisible[unit](this.state[key + "InMM"])
             });
 
             this.setState(newState);
@@ -81,7 +80,7 @@ class MyForm extends React.Component {
             });
         } else if (name === 'showLabels') {
             console.log('show labels: ' + target.value);
-            this.setState( {
+            this.setState({
                 'showLabels': target.checked
             });
         } else { // measurementChanged
@@ -101,8 +100,8 @@ class MyForm extends React.Component {
                     <Row>
                         <Col>
                             <Image
-                                src={face_points_lines_labels2}
-                                width={300}/>
+                                src={face_points_lines_labels}
+                                width={200} />
                         </Col>
                         <Col as={Form} md={7} lg={8}>
                             <Row>
@@ -130,12 +129,28 @@ class MyForm extends React.Component {
                             <Row>
                                 <Col>
                                     <DimensionInput
+                                        id="noseToChin"
+                                        label="Nose to chin with mouth open to talk (C to D)"
+                                        unit={this.state.unit}
+                                        val={this.state.noseToChin}
+                                        onValueChange={this.handleInputChange}
+                                    />
+                                    <DimensionInput
+                                        id="earHeight"
+                                        label="Ear height (A to E)"
+                                        unit={this.state.unit}
+                                        val={this.state.earHeight}
+                                        onValueChange={this.handleInputChange}
+                                    />
+                                    <DimensionInput
                                         id="earToBridge"
                                         label="Ear top to nose bridge (A to B)"
                                         unit={this.state.unit}
                                         val={this.state.earToBridge}
                                         onValueChange={this.handleInputChange}
                                     />
+                                </Col>
+                                <Col>
                                     <DimensionInput
                                         id="earToNose"
                                         label="Ear top to nose tip (A to C)"
@@ -150,41 +165,6 @@ class MyForm extends React.Component {
                                         val={this.state.bridgeToTip}
                                         onValueChange={this.handleInputChange}
                                     />
-                                </Col>
-                                <Col>
-                                    <DimensionInput
-                                        id="noseToChin"
-                                        label="Nose to chin with mouth open to talk (C to D)"
-                                        unit={this.state.unit}
-                                        val={this.state.noseToChin}
-                                        onValueChange={this.handleInputChange}
-                                    />
-                                    {/* <DimensionInput
-                                        id="chinToThroat"
-                                        label="Chin to throat (D to E)"
-                                        unit={this.state.unit}
-                                        val={this.state.chinToThroat}
-                                        onValueChange={this.handleInputChange}
-                                    />
-                                    <DimensionInput
-                                        id="earToThroat"
-                                        label="Throat to ear bottom (E to F)"
-                                        unit={this.state.unit}
-                                        val={this.state.earToThroat}
-                                        onValueChange={this.handleInputChange}
-                                    /> */}
-                                    <DimensionInput
-                                        id="earHeight"
-                                        label="Ear height (A to F)"
-                                        unit={this.state.unit}
-                                        val={this.state.earHeight}
-                                        onValueChange={this.handleInputChange}
-                                    />
-                                    {/* <CheckboxInput
-                                        id="showLabels"
-                                        label="Show labels"
-                                        onValueChange={this.handleInputChange}
-                                        /> */}
                                 </Col>
                             </Row>
                         </Col>

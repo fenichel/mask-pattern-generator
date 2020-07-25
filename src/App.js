@@ -8,7 +8,6 @@ import MyForm from './Form.js';
 import { SewingInstructions } from './SewingInstructions';
 import { MeasurementInstructions } from './MeasurementInstructions';
 import { Introduction } from './Introduction';
-import { TheMath } from './TheMath';
 import { Feedback } from './Feedback';
 
 function App() {

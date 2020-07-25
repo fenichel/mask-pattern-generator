@@ -13,7 +13,7 @@ export class Ruler extends React.Component {
                 <text x='-25' y='-35'
                     fontSize='4px'
                     fontFamily='sans-serif'
-                >This line should be 5 cm long when printed</text>
+                >This line should be 5 cm (2 inches) long when printed</text>
             </g>
         )
     }

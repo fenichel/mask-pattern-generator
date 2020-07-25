@@ -4,11 +4,9 @@ import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { Ruler } from './ruler';
-import { VertexLabels } from './VertexLabels';
 import { cloneSvg } from './exportSvg';
 import { degreeToRadian, getX, getY, getAngleA } from './trig';
 import { PatternPolyline } from './PatternPolyline';
-import { CutOnFold, ArrowDef } from './CutOnFold';
 import { PatternInfo } from './PatternInfo';
 
 export class MaskPattern extends React.Component {
@@ -80,7 +78,7 @@ export class MaskPattern extends React.Component {
         }
     }
 
-    roundNose() {        
+    roundNose() {
         const roundingDistance = 5;
 
         // tan(angle) = opposite over adjacent
@@ -109,7 +107,7 @@ export class MaskPattern extends React.Component {
     }
 
     setThroatPoint() {
-        // Hack to force the chin angle to 10 down and the chin to throat length to about an inch (plus 6mm seam allowance).
+        // Chin to throat length: about an inch (plus 6mm seam allowance).
         const x = this.chinPoint.x - getX(this.chinThroatAngle, 31);
         const y = this.chinPoint.y + getY(this.chinThroatAngle, 31);
         this.throatPoint = {
@@ -145,21 +143,11 @@ export class MaskPattern extends React.Component {
         this.roundNose();
     }
 
+    /**
+     * Gets a list of points that will be connected by a straight line.
+     */
     getOutlinePoints() {
         let points = [
-            this.earTop,
-            this.bridgePoint,
-            this.aboveNose,
-            this.belowNose,
-            this.aboveChin,
-            this.belowChin,
-            this.throatPoint,
-            this.earBottom,
-            this.tabBottom,
-            this.tabTop,
-            this.earTop
-        ];
-         points = [
             this.earTop,
             this.tabTop,
             this.tabBottom,
@@ -189,45 +177,50 @@ export class MaskPattern extends React.Component {
         ]
     }
 
+    /**
+     * Gets the path for the curve at the front.
+     */
     getFrontCurvePath() {
         const points = [
             this.aboveNose,
             this.nosePoint,
-            {x: this.nosePoint.x + 10, y: this.nosePoint.y + (this.chinPoint.y - this.nosePoint.y) / 4},
-            {x: this.nosePoint.x , y: this.nosePoint.y + 3 * (this.chinPoint.y - this.nosePoint.y) / 4},
+            { x: this.nosePoint.x + 10, y: this.nosePoint.y + (this.chinPoint.y - this.nosePoint.y) / 4 },
+            { x: this.nosePoint.x, y: this.nosePoint.y + 3 * (this.chinPoint.y - this.nosePoint.y) / 4 },
             this.belowChin,
             this.throatPoint,
             this.throatPoint
         ]
         let pointStr = '';
-        points.forEach(point =>  {pointStr += point.x + ' ' + point.y + ' ' });
+        points.forEach(point => { pointStr += point.x + ' ' + point.y + ' ' });
         let path = 'm ' + this.bridgePoint.x + ' ' + this.bridgePoint.y + ' Q ' + pointStr;
         return path;
     }
 
+    /**
+     * Gets the path for the curve from the ear top to the nose.
+     */
     getUpperCurvePath() {
         let xOffset = (this.bridgePoint.x - this.earTop.x) / 3;
-        let yOffset = (this.bridgePoint.y - this.earTop.y) * .8 ;
-        console.log(yOffset)
+        let yOffset = (this.bridgePoint.y - this.earTop.y) * .8;
         const points = [
-            {x: this.bridgePoint.x - xOffset, y: this.bridgePoint.y - yOffset},
+            { x: this.bridgePoint.x - xOffset, y: this.bridgePoint.y - yOffset },
             this.bridgePoint,
             this.bridgePoint
         ];
-        
+
         let pointStr = '';
-        points.forEach(point =>  {pointStr += point.x + ' ' + point.y + ' ' });
+        points.forEach(point => { pointStr += point.x + ' ' + point.y + ' ' });
         let path = 'm ' + this.earTop.x + ' ' + this.earTop.y + ' Q ' + pointStr;
-        console.log('path is ' + path);
         return path;
     }
+
     render() {
         this.setDimensions(this.props);
 
         return (
             <>
                 <Col>
-                    <Row>
+                    <Row className='downloadButton'>
                         <Button onClick={this.download}>Download pattern</Button>
                     </Row>
                     <Row>
@@ -239,8 +232,8 @@ export class MaskPattern extends React.Component {
                             <Ruler />
                             <PatternInfo vals={this.props} />
                             <g transform='translate(0, 0)'>
-                                    <PatternPolyline points={this.getOutlinePoints()}>
-                                    </PatternPolyline>
+                                <PatternPolyline points={this.getOutlinePoints()}>
+                                </PatternPolyline>
                                 <line
                                     x1={this.earTop.x}
                                     y1={this.earTop.y}
@@ -261,8 +254,6 @@ export class MaskPattern extends React.Component {
                                     stroke='black'
                                     strokeWidth='.5px'
                                 ></path>
-                                {this.props.showLabels &&
-                                    <VertexLabels points={this.getLabelPoints()}></VertexLabels>}
                             </g>
                         </svg>
                     </Row>
