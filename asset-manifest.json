@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/mask-pattern-generator/static/css/main.b7b88aa6.chunk.css",
-    "main.js": "/mask-pattern-generator/static/js/main.c2388181.chunk.js",
-    "main.js.map": "/mask-pattern-generator/static/js/main.c2388181.chunk.js.map",
+    "main.js": "/mask-pattern-generator/static/js/main.9f5b9a9f.chunk.js",
+    "main.js.map": "/mask-pattern-generator/static/js/main.9f5b9a9f.chunk.js.map",
     "runtime-main.js": "/mask-pattern-generator/static/js/runtime-main.3f0d6445.js",
     "runtime-main.js.map": "/mask-pattern-generator/static/js/runtime-main.3f0d6445.js.map",
     "static/css/2.af3c1da9.chunk.css": "/mask-pattern-generator/static/css/2.af3c1da9.chunk.css",
     "static/js/2.714950d0.chunk.js": "/mask-pattern-generator/static/js/2.714950d0.chunk.js",
     "static/js/2.714950d0.chunk.js.map": "/mask-pattern-generator/static/js/2.714950d0.chunk.js.map",
     "index.html": "/mask-pattern-generator/index.html",
-    "precache-manifest.13fb6f92fff28885350eb4cd640ceca5.js": "/mask-pattern-generator/precache-manifest.13fb6f92fff28885350eb4cd640ceca5.js",
+    "precache-manifest.28a58841da48e0f51211b1a9cb9f8ded.js": "/mask-pattern-generator/precache-manifest.28a58841da48e0f51211b1a9cb9f8ded.js",
     "service-worker.js": "/mask-pattern-generator/service-worker.js",
     "static/css/2.af3c1da9.chunk.css.map": "/mask-pattern-generator/static/css/2.af3c1da9.chunk.css.map",
     "static/css/main.b7b88aa6.chunk.css.map": "/mask-pattern-generator/static/css/main.b7b88aa6.chunk.css.map",
@@ -23,6 +23,6 @@
     "static/css/2.af3c1da9.chunk.css",
     "static/js/2.714950d0.chunk.js",
     "static/css/main.b7b88aa6.chunk.css",
-    "static/js/main.c2388181.chunk.js"
+    "static/js/main.9f5b9a9f.chunk.js"
   ]
 }
