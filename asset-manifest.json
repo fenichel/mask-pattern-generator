@@ -1,20 +1,20 @@
 {
   "files": {
     "main.css": "/mask-pattern-generator/static/css/main.b7b88aa6.chunk.css",
-    "main.js": "/mask-pattern-generator/static/js/main.58921113.chunk.js",
-    "main.js.map": "/mask-pattern-generator/static/js/main.58921113.chunk.js.map",
+    "main.js": "/mask-pattern-generator/static/js/main.c2388181.chunk.js",
+    "main.js.map": "/mask-pattern-generator/static/js/main.c2388181.chunk.js.map",
     "runtime-main.js": "/mask-pattern-generator/static/js/runtime-main.3f0d6445.js",
     "runtime-main.js.map": "/mask-pattern-generator/static/js/runtime-main.3f0d6445.js.map",
     "static/css/2.af3c1da9.chunk.css": "/mask-pattern-generator/static/css/2.af3c1da9.chunk.css",
     "static/js/2.714950d0.chunk.js": "/mask-pattern-generator/static/js/2.714950d0.chunk.js",
     "static/js/2.714950d0.chunk.js.map": "/mask-pattern-generator/static/js/2.714950d0.chunk.js.map",
     "index.html": "/mask-pattern-generator/index.html",
-    "precache-manifest.cedd70f18cc2633eb90f2c1a333b2f4a.js": "/mask-pattern-generator/precache-manifest.cedd70f18cc2633eb90f2c1a333b2f4a.js",
+    "precache-manifest.13fb6f92fff28885350eb4cd640ceca5.js": "/mask-pattern-generator/precache-manifest.13fb6f92fff28885350eb4cd640ceca5.js",
     "service-worker.js": "/mask-pattern-generator/service-worker.js",
     "static/css/2.af3c1da9.chunk.css.map": "/mask-pattern-generator/static/css/2.af3c1da9.chunk.css.map",
     "static/css/main.b7b88aa6.chunk.css.map": "/mask-pattern-generator/static/css/main.b7b88aa6.chunk.css.map",
     "static/js/2.714950d0.chunk.js.LICENSE.txt": "/mask-pattern-generator/static/js/2.714950d0.chunk.js.LICENSE.txt",
-    "static/media/face-points-lines-labels.jpg": "/mask-pattern-generator/static/media/face-points-lines-labels.c6ac9eee.jpg",
+    "static/media/face-points-lines-labels.jpg": "/mask-pattern-generator/static/media/face-points-lines-labels.d07cb73d.jpg",
     "static/media/face_mask_earloop.jpg": "/mask-pattern-generator/static/media/face_mask_earloop.7ac6b580.jpg",
     "static/media/face_mask_laces.jpg": "/mask-pattern-generator/static/media/face_mask_laces.e6748e96.jpg"
   },
@@ -23,6 +23,6 @@
     "static/css/2.af3c1da9.chunk.css",
     "static/js/2.714950d0.chunk.js",
     "static/css/main.b7b88aa6.chunk.css",
-    "static/js/main.58921113.chunk.js"
+    "static/js/main.c2388181.chunk.js"
   ]
 }
