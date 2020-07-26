@@ -3,6 +3,7 @@ import React from 'react';
 import Jumbotron from 'react-bootstrap/Figure';
 import face_mask_earloop from './face_mask_earloop.jpg';
 import face_mask_laces from './face_mask_laces.jpg';
+import sample_pattern from './sample_pattern.svg';
 
 export class Introduction extends React.Component {
     render() {
@@ -36,6 +37,11 @@ export class Introduction extends React.Component {
                     src={face_mask_laces}
                     height='500'
                     alt='Our model wearing a face mask with laces behind the neck and over the top of the head.'>
+                </img>
+                <img
+                    src={sample_pattern}
+                    height='500'
+                    alt='A sample generated pattern.'>
                 </img>
 
 

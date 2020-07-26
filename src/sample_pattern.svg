@@ -1,0 +1,55 @@
+<?xml version="1.0" standalone="no"?>
+<svg width="300mm" height="300mm" viewBox="-50 -55 250 245" id="maskPattern" xmlns="http://www.w3.org/2000/svg" style="background-color: transparent"><style xmlns="http://www.w3.org/1999/xhtml">.App {
+/* text-align: center; */
+margin: 10px;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.patternSvgText {
+  font-size: 4px;
+  font-family: sans-serif;
+}
+
+.patternSvgLine {
+  stroke-width: .5px;
+  stroke: black;
+  fill: none;
+}
+
+.patternSvgPoint {
+  stroke: black
+}
+
+.feedbackText {
+  font-style: italic;
+}
+
+.instructionalImage {
+  max-height: 350px;
+  margin: 2px
+}
+
+.downloadButton {
+  justify-content: center;
+  align-items: center;
+}</style><g><line x1="-25" y1="-30" x2="25" y2="-30" stroke="black" fill="none" stroke-width=".5px"/><text x="-25" y="-35" font-size="4px" font-family="sans-serif">This line should be 5 cm (2 inches) long when printed</text></g><g transform="translate(20,15)" font-size="3px" font-family="sans-serif"><text font-size="4px" y="-5">Sample pattern</text><text y="0">Nose to chin: 95 mm</text><text y="4">Ear height: 45 mm</text><text y="8">Ear to nose bridge: 110 mm</text><text y="12">Ear to nose tip: 115 mm</text><text y="16">Nose bridge to nose tip: 30 mm</text></g><g transform="translate(0, 0)"><polyline points="0,0,-25,0,-25,45,0,45,84.03334993717229,102.36018309169415" stroke="black" fill="none" stroke-width=".5px"/><line x1="0" y1="0" x2="0" y2="45" stroke-dasharray="4" stroke="black" stroke-width=".5px"/><path d="m 103.29200851310172 -37.825401218352226 Q 112.68399331930924 -14.65665888304261 114.56239028055074 -10.02291041598069 124.56239028055074 16.72708958401931 114.56239028055074 70.22708958401931 94.86623522030658 100.45005313735791 84.03334993717229 102.36018309169415 84.03334993717229 102.36018309169415 " fill="none" stroke="black" stroke-width=".5px"/><path d="m 0 0 Q 68.86133900873449 -7.565080243670444 103.29200851310172 -37.825401218352226 103.29200851310172 -37.825401218352226 " fill="none" stroke="black" stroke-width=".5px"/></g></svg>
