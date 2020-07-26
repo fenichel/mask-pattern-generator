@@ -17,7 +17,8 @@ export class MaskPattern extends React.Component {
         this.earToNoseRiseAngle = degreeToRadian(5);
         this.noseChinAngle = degreeToRadian(90);
         // The width of the tab for the strap, in mm
-        this.tabWidth = 25;
+        this.tabWidth = 15;
+        this.filterOffset = 5;
         this.chinThroatAngle = degreeToRadian(10);
         this.download = this.download.bind(this);
     }
@@ -235,9 +236,9 @@ export class MaskPattern extends React.Component {
                                 <PatternPolyline points={this.getOutlinePoints()}>
                                 </PatternPolyline>
                                 <line
-                                    x1={this.earTop.x}
+                                    x1={this.earTop.x + this.filterOffset}
                                     y1={this.earTop.y}
-                                    x2={this.earBottom.x}
+                                    x2={this.earBottom.x + this.filterOffset}
                                     y2={this.earBottom.y}
                                     strokeDasharray='4'
                                     stroke='black'
