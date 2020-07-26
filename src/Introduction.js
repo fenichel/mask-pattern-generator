@@ -10,6 +10,14 @@ export class Introduction extends React.Component {
             <Jumbotron>
                 <h1>Custom Mask Pattern Generator</h1>
                 <p>This is a utility for generating sewing patterns for custom masks, based on the dimensions of your face.</p>
+                <p>The pattern is similar to the <a href='https://www.craftpassion.com/face-mask-sewing-pattern/'>Craft Passion</a> pattern.</p>
+                <p>Some changes I made:</p>
+                <ul>
+                    <li>Smaller at the ear to avoid gaping.</li>
+                    <li>Longer at the front to avoid slipping when you talk.</li>
+                    <li>Easy to customize and reprint.</li>
+                    <li>A lighter curve at the front.</li>
+                </ul>
                 <p>My goals for the pattern are:</p>
                 <ul>
                     <li>The mask stays up when you talk.</li>
@@ -31,7 +39,7 @@ export class Introduction extends React.Component {
                 </img>
 
 
-                <p>Made by Rachel Fenichel. Last updated July 25 2020.</p>
+                <p>Made by Rachel Fenichel. Last updated July 26 2020.</p>
             </Jumbotron>)
     }
 }
