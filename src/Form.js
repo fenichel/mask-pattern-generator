@@ -137,7 +137,7 @@ class MyForm extends React.Component {
                                     />
                                     <DimensionInput
                                         id="earHeight"
-                                        label="Ear height (A to E)"
+                                        label="Ear height at front of ear (A to E)"
                                         unit={this.state.unit}
                                         val={this.state.earHeight}
                                         onValueChange={this.handleInputChange}

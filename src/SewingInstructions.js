@@ -9,7 +9,10 @@ export class SewingInstructions extends React.Component {
                     Measure your face and use the Create Pattern tab to create and download your pattern.
                 </p>
                 <p>
-                    Open your pattern with a browser and print it.
+                    The downloaded file is an SVG (Scalable Vector Format).
+                </p>
+                <p>
+                    Open your pattern with a web browser (Firefox, Chrome, Edge, Safari, etc) and print it.
                 </p>
                 <p>
                     Use a ruler to check that the line at the top left is 5 cm long.
