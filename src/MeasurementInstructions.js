@@ -11,13 +11,14 @@ export class MeasurementInstructions extends React.Component {
             <>
                 <ListGroup variant='flush'>
                     <ListGroup.Item>To size your mask you will measure the distances between a few points on your face.</ListGroup.Item>
+                    <ListGroup.Item>When measuring, think about where you want the mask to sit on your face.</ListGroup.Item>
                     <ItemDescription
                         itemName='A'
-                        description='The top of your ear'>
+                        description='1/2" forward from the top of your ear'>
                     </ItemDescription>
                     <ItemDescription
                         itemName='B'
-                        description='The bridge of your nose'>
+                        description='The bridge of your nose, where you want the mask to sit'>
                     </ItemDescription>
                     <ItemDescription
                         itemName='C'
@@ -29,7 +30,7 @@ export class MeasurementInstructions extends React.Component {
                     </ItemDescription>
                     <ItemDescription
                         itemName='E'
-                        description='The bottom of your ear, just above the end of your jawbone'>
+                        description='1/2" forward from the bottom of your ear'>
                     </ItemDescription>
                     <MeasurementFigure
                         imgSrc={face_points_lines_labels}
@@ -43,11 +44,11 @@ export class MeasurementInstructions extends React.Component {
                     <ListGroup.Item>Keeping the end point pinched, lay the string along the ruler to measure the length from the knot to the end point.</ListGroup.Item>
                     <ItemDescription
                         itemName='A to B'
-                        description='The top of your ear to the bridge of your nose, following your cheekbone. For the bridge of the nose, use the point where you want the top of the mask to sit on your nose.'>
+                        description='Point A (see above) to the bridge of your nose, following your cheekbone. For the bridge of the nose, use the point where you want the top of the mask to sit on your nose.'>
                     </ItemDescription>
                     <ItemDescription
                         itemName='A to C'
-                        description='The top of your ear to the point of your nose.'>
+                        description='Point A (see above) to the point of your nose.'>
                     </ItemDescription>
                     <ItemDescription
                         itemName='B to C'
@@ -59,7 +60,7 @@ export class MeasurementInstructions extends React.Component {
                     </ItemDescription>
                     <ItemDescription
                         itemName='A to E'
-                        description='The top of your ear to the bottom of your ear, measured directly in front your ear.'>
+                        description='The top of your ear to the bottom of your ear, measured about 1/2" in front your ear or where you want the edge of the mask to be.'>
                     </ItemDescription>
                 </ListGroup>
             </>

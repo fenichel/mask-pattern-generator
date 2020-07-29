@@ -25,6 +25,7 @@ export class Introduction extends React.Component {
                     <li>The mask stays up when you talk.</li>
                     <li>The mask has minimal bulk in front of your mouth.</li>
                     <li>The mask fits snugly, with no gaping at the nose, chin, or ears.</li>
+                    <li>The tool works well enough that you can use it to make masks for friends and family who don't live near you.</li>
                 </ul>
                 <p>I'm still iterating on the pattern and trying to dial in my math--if it doesn't fit right on you, please let me know and/or come back in a week to try again.</p>
                 <p>Use the tabs at the top of the page to navigate.</p>
@@ -46,7 +47,7 @@ export class Introduction extends React.Component {
                 </img>
 
 
-                <p>Made by Rachel Fenichel. Last updated July 26 2020.</p>
+                <p>Made by Rachel Fenichel. Last updated July 28 2020.</p>
             </Jumbotron>)
     }
 }

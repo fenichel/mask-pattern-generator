@@ -30,7 +30,8 @@ export class SewingInstructions extends React.Component {
                 </ul>
 
                 <h2>Cutting and sewing</h2>
-                <p>Follow the instructions in <a href="https://www.youtube.com/watch?v=KBR98YKAr7w&list=WL">this excellent video</a> to make your mask.</p>
+                <p>If you prefer video instructions, follow <a href="https://www.youtube.com/watch?v=KBR98YKAr7w&list=WL">this excellent video</a> to make your mask.</p>
+                <p>If you prefer text and images, <a href="https://dhuratadavies.com/blogs/things-i-make-and-do/free-face-mask-pattern-and-tutorial">this tutorial</a> walks through a similar constrction method.</p>
                 <p>The pattern includes a 1/4" seam allowance.</p>
                 <p>To cut the lining fabric, cut along the dashed line at the ear.  Cut on the solid line for the main fabric.</p>
                 <h2>Adjustments</h2>
