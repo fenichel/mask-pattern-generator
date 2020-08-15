@@ -47,7 +47,7 @@ export class Introduction extends React.Component {
                 </img>
 
 
-                <p>Made by Rachel Fenichel. Last updated July 28 2020.</p>
+                <p>Made by Rachel Fenichel. Last updated August 14 2020.</p>
             </Jumbotron>)
     }
 }

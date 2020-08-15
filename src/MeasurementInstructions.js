@@ -4,12 +4,13 @@ import face_points_lines_labels from './face-points-lines-labels.jpg';
 import { MeasurementFigure } from './MeasurementFigure';
 import ListGroup from 'react-bootstrap/ListGroup';
 import { ItemDescription } from './ItemDescription';
+import { MeasurementImages } from './images/measurementImages';
 
 export class MeasurementInstructions extends React.Component {
     render() {
         return (
             <>
-                <ListGroup variant='flush'>
+                <ListGroup variant="flush">
                     <ListGroup.Item>To size your mask you will measure the distances between a few points on your face.</ListGroup.Item>
                     <ListGroup.Item>When measuring, think about where you want the mask to sit on your face.</ListGroup.Item>
                     <ItemDescription
@@ -46,22 +47,27 @@ export class MeasurementInstructions extends React.Component {
                         itemName='A to B'
                         description='Point A (see above) to the bridge of your nose, following your cheekbone. For the bridge of the nose, use the point where you want the top of the mask to sit on your nose.'>
                     </ItemDescription>
+                    <MeasurementImages imgName='ear_to_bridge'></MeasurementImages>
                     <ItemDescription
                         itemName='A to C'
                         description='Point A (see above) to the point of your nose.'>
                     </ItemDescription>
+                    <MeasurementImages imgName='ear_to_nose'></MeasurementImages>
                     <ItemDescription
                         itemName='B to C'
                         description='The bridge of your nose to the point of your nose.'>
                     </ItemDescription>
                     <ItemDescription
                         itemName='C to D'
-                        description='The point of your nose to the tip of your chin. Measure this with your mouth open, as though you were talking.'>
+                        description='The point of your nose to the tip of your chin. Measure this with your mouth open, as though you were yelling at a friend across a (pre-covid) crowded room.'>
                     </ItemDescription>
+                    <MeasurementImages imgName='nose_to_chin'></MeasurementImages>
                     <ItemDescription
                         itemName='A to E'
                         description='The top of your ear to the bottom of your ear, measured about 1/2" in front your ear or where you want the edge of the mask to be.'>
                     </ItemDescription>
+
+                    <MeasurementImages imgName='ear_height'></MeasurementImages>
                 </ListGroup>
             </>
         );
